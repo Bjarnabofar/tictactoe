@@ -5,5 +5,9 @@ public class TicTacToe{
 	public static String welcome(){
 		return ("Welcome to TicTacToe!");
 	}
+
+	public static void main(String[] args){
+			System.out.println(welcome());
+	}
 }
 
