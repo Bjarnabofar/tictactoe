@@ -31,11 +31,13 @@ For example the cell[0][2] stands for the cell with x=0 and y=2(starts with 0).
 TicTacToe is the class that connects everything togehter. It makes the game start and keeps it running as long as needed.
 
 ##Coding rules
-All functions' start with lower case and every other word followed it a capital letter.
+All functions' start with lower case and every other word followed by a capital letter.
 All variables use the same naming rule as functions.
 Classes start with capital letter and otherwise the same rule as functions.
+When brackets are needed we put the first one in the same line as the code(on the right) and the other bracket is
+in an empty line at the bottom to the left.
 
 ##Coding methods
-We use TTD. Starting by making a test and see it fail. Then we code so that the test is successful and then we can commit
+We use TDD. Starting by making a test and see it fail. Then we code so that the test is successful and then we can commit
 or if appropriate refactor first.
-We make branch for every featus and work in pairs most of the time.
+We make branch for every feature and work in pairs most of the time.
