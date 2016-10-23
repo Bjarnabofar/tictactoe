@@ -1,13 +1,17 @@
 
 package is.ru.tictactoe;
+import is.ru.tictactoe.Board;
 
-public class TicTacToe{
+public class TicTacToe 
+{
 	public static String welcome(){
 		return ("Welcome to TicTacToe!");
 	}
 
 	public static void main(String[] args){
-			System.out.println(welcome());
+		Board b = new Board();
+		System.out.println(welcome());
+		b.displayBoard();
 	}
 }
 
