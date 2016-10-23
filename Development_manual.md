@@ -1,0 +1,1 @@
+# Development manual for tictactoe
