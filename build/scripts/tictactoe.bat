@@ -63,7 +63,7 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\tictactoe.jar;%APP_HOME%\lib\slf4j-api-1.7.21.jar
+set CLASSPATH=%APP_HOME%\lib\tictactoe.jar;%APP_HOME%\lib\slf4j-api-1.7.21.jar;%APP_HOME%\lib\spark-core-2.5.jar;%APP_HOME%\lib\jetty-server-9.3.6.v20151106.jar;%APP_HOME%\lib\jetty-webapp-9.3.6.v20151106.jar;%APP_HOME%\lib\websocket-server-9.3.6.v20151106.jar;%APP_HOME%\lib\websocket-servlet-9.3.6.v20151106.jar;%APP_HOME%\lib\javax.servlet-api-3.1.0.jar;%APP_HOME%\lib\jetty-http-9.3.6.v20151106.jar;%APP_HOME%\lib\jetty-io-9.3.6.v20151106.jar;%APP_HOME%\lib\jetty-xml-9.3.6.v20151106.jar;%APP_HOME%\lib\jetty-servlet-9.3.6.v20151106.jar;%APP_HOME%\lib\websocket-common-9.3.6.v20151106.jar;%APP_HOME%\lib\websocket-client-9.3.6.v20151106.jar;%APP_HOME%\lib\websocket-api-9.3.6.v20151106.jar;%APP_HOME%\lib\jetty-util-9.3.6.v20151106.jar;%APP_HOME%\lib\jetty-security-9.3.6.v20151106.jar
 
 @rem Execute tictactoe
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %TICTACTOE_OPTS%  -classpath "%CLASSPATH%" is.ru.tictactoe.TicTacToe %CMD_LINE_ARGS%
