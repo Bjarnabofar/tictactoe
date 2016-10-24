@@ -10,6 +10,9 @@ public class PointTest{
 	@Test
 	public void testDefaultPointConstructor(){
 		Point p = new point();
+		assertEquals(1, p.getX());
+		assertEquals(1, p.gety());
+
 	}
 	
 }
