@@ -12,7 +12,15 @@ public class PointTest{
 		Point p = new Point();
 		assertEquals(0, p.getX());
 		assertEquals(0, p.getY());
-
+	}
+	
+	@Test
+	public void testPointConstructor(){
+		int xValue = 4, yValue = 1;
+	
+		Point p = Point(xValue, yValue);
+		assertEquals(xValue, p.getX());
+		assertEquals(yValue, p.getY());
 	}
 	
 }

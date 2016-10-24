@@ -26,6 +26,16 @@ public class Point {
 	public int getY(){
 		return y;
 	}
+	
+	//setter function for x
+	public int setX(int xx){
+		x = xx;
+	}
+	
+	//setter function for y
+	public int setY(int yy){
+		y = yy;
+	}
 
 	//place holder main function
 	public void main(String[] args){
