@@ -2,10 +2,10 @@ package is.ru.tictactoe;
 
 import static spark.Spark.*;
 import spark.*;
+import spark.servlet.SparkApplication;
 
-public class TicTacToeWeb {
+public class TicTacToeWeb implements SparkApplication{
 	public static void main(String[] args) {
-		port(getHerokuAssignedPort());
 		staticFileLocation("/public");
 		
 		SparkApplication tttWeb = new TicTacToeWeb();
@@ -20,8 +20,6 @@ public class TicTacToeWeb {
 	@Override
     public void init() {
     	final TicTacToe ttt = new TicTacToe();    
-	    post("/welcome", (req, res) -> ttt.welcome());
-	    res.status(200);
-	    return res;
+	    get("/welcome", (req, res) -> ttt.welcome());
 	}
 }
