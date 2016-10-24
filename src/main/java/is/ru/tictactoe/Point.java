@@ -25,5 +25,10 @@ public class point {
 	//getter function for y
 	public int getY(){
 		return y;
-	}	
+	}
+
+	//place holder main function
+	public void main(String[] args){
+		
+	}
 }
