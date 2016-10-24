@@ -11,7 +11,7 @@ public class PointTest{
 	public void testDefaultPointConstructor(){
 		Point p = new Point();
 		assertEquals(0, p.getX());
-		assertEquals(1, p.getY());
+		assertEquals(0, p.getY());
 
 	}
 	
