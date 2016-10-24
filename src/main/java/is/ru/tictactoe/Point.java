@@ -5,14 +5,14 @@ public class point {
 	private int y;
 	
 	//default constructor, probably not used tho
-	public point(){
+	public Point(){
 		x = 0;
 		y = 0;
 	}
 	
 	//another constructor takes x and y as parameters and 
 	//constructs a point
-	public point(int xx, int yy){
+	public Point(int xx, int yy){
 		x = xx;
 		y = yy;
 	}
