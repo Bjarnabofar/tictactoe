@@ -1,6 +1,6 @@
 package is.ru.tictactoe;
 
-public class point {
+public class Point {
 	private int x;
 	private int y;
 	
