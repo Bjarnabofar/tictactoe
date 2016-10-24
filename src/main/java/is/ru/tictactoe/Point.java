@@ -1,4 +1,4 @@
-package tictactoe;
+package is.ru.tictactoe;
 
 public class point {
 	private int x;
@@ -15,5 +15,15 @@ public class point {
 	public point(int xx, int yy){
 		x = xx;
 		y = yy;
+	}
+
+	//getter function for x
+	public int getX(){
+		return x;
+	}
+	
+	//getter function for y
+	public int getY(){
+		return y;
 	}	
 }

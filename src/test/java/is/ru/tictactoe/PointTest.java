@@ -5,7 +5,11 @@ import is.ru.tictactoe.Point;
 
 import org.junit.Test;
 
-public class BoardTest{
+public class PointTest{
 	
+	@Test
+	public void testDefaultPointConstructor(){
+		Point p = new point();
+	}
 	
 }
