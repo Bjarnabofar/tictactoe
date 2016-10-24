@@ -8,6 +8,7 @@ public class Board
 	private int size;
 	private Cell[][] cells;
 
+	//default constructor initialize tictactoe board with size 3
 	public Board()
 	{
 		size = 3;
@@ -30,10 +31,6 @@ public class Board
 		return size;
 	}
 
-	public String welcome(){
-		return ("Welcome to Board!");
-	}
-
 	public void displayBoard(){
 		for(int y = 0; y < getSize(); y++)
 		{
@@ -43,6 +40,11 @@ public class Board
 			}
 			System.out.println();
 		}
+	}
+
+	public boolean isAvailable(Cell cell)
+	{
+
 	}
 
 

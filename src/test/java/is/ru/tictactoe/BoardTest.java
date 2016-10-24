@@ -6,12 +6,6 @@ import is.ru.tictactoe.Board;
 import org.junit.Test;
 
 public class BoardTest{
-	
-	@Test
-	public void testWelcome(){
-		Board b = new Board();
-		assertEquals("Welcome to Board!", b.welcome());
-	}
 
 	@Test
 	public void testSize(){
@@ -21,6 +15,6 @@ public class BoardTest{
 
 	@Test
 	public void testDisplayBoard(){
-		
+
 	}
 }
