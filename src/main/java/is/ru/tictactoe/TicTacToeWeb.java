@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class TicTacToeWeb implements SparkApplication{
 	public static void main(String[] args) {
-		staticFileLocation("/public");
+		staticFiles.location("/public");
 		
 		SparkApplication tttWeb = new TicTacToeWeb();
 		//get("/", (req, res) -> ttt.welcome());
@@ -22,8 +22,7 @@ public class TicTacToeWeb implements SparkApplication{
 	@Override
     public void init() {
     	final TicTacToe ttt = new TicTacToe();    
-	    get("/welcome", (req, res) -> ttt.welcome());
+	    get("/", (req, res) -> ttt.welcome());
 	    //get("/", (req, res) -> ttt.welcome());
-	    
 	}
 }
