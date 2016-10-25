@@ -2,6 +2,7 @@ package is.ru.tictactoe;
 
 import java.util.*;
 import is.ru.tictactoe.Cell;
+import is.ru.tictactoe.Point;
 
 public class Board
 {
@@ -31,6 +32,7 @@ public class Board
 		return size;
 	}
 
+
 	public void displayBoard(){
 		for(int y = 0; y < getSize(); y++)
 		{
@@ -42,9 +44,9 @@ public class Board
 		}
 	}
 
-	public boolean isAvailable(Cell cell)
-	{
+	public boolean isAvailable(Point p){
 
+		return true;
 	}
 
 

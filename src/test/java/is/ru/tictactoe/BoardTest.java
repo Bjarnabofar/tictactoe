@@ -1,20 +1,32 @@
 package is.ru.tictactoe;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 import is.ru.tictactoe.Board;
+import is.ru.tictactoe.Point;
 
 import org.junit.Test;
 
 public class BoardTest{
 
+	//Stub class for Point
+	public class StubPoint extends Point{
+
+		public boolean isAvailable(){
+			return true;
+		}
+	}
+
 	@Test
 	public void testSize(){
-		Board b = new Board();
-		assertEquals(3, b.getSize());
+		Board board = new Board();
+		assertEquals(3, board.getSize());
 	}
 
 	@Test
-	public void testDisplayBoard(){
+	public void testWhenCellInBoardIsAvailable(){
 
+		Board board = new Board();
+		assertTrue(board.isAvailable(new StubPoint()));
 	}
+
 }

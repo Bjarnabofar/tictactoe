@@ -8,6 +8,7 @@ public class TicTacToe
 		return ("Welcome to TicTacToe!");
 	}
 
+	//test for visual things
 	public static void main(String[] args){
 		Board b = new Board();
 		System.out.println(welcome());

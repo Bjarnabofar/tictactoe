@@ -7,8 +7,6 @@ import org.junit.Test;
 
 public class PointTest {
 
-	Point p = new Point();
-
 	@Test
 	public void testX(){
 		Point np = new Point(2, 2);
@@ -20,6 +18,4 @@ public class PointTest {
 		Point np = new Point(2, 1);
 		assertEquals(1, np.getY());
 	}
-
-
 }

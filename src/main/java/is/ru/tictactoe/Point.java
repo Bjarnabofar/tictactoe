@@ -11,6 +11,7 @@ public class Point {
 		y = 0;
 	}
 
+	//Constructor for new point
 	public Point(int xx, int yy){
 		x = xx;
 		y = yy;
@@ -22,6 +23,11 @@ public class Point {
 
 	public int getY(){
 		return y;
+	}
+
+	public Point getPoint(){
+		Point point = new Point(x, y);
+		return point;
 	}
 
 }
