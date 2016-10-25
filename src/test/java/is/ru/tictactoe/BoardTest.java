@@ -13,14 +13,9 @@ public class BoardTest{
 	//Stub class for Point
 	public class StubPoint extends Point{
 		public StubPoint(){
-
+			setX(1);
+			setY(1);
 		}
-
-		public StubPoint(int xx, int yy){ 
-			x = xx;
-			y = yy;
-		}
-
 	}
 
 	@Test
@@ -35,14 +30,14 @@ public class BoardTest{
 
 	@Test
 	public void testWhenCellIsUpdatedByX(){
-		StubPoint s = new StubPoint(1, 1);
+		StubPoint s = new StubPoint();
 		board.updateBoard(s,'X');
 		assertFalse(board.isAvailable(s));
 	}
 
 	@Test
 	public void testWhenCellIsUpdatedByO(){
-		StubPoint s = new StubPoint(1, 1);
+		StubPoint s = new StubPoint();
 		board.updateBoard(s,'O');
 		assertFalse(board.isAvailable(s));
 	}

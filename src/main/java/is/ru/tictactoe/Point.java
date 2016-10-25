@@ -2,8 +2,8 @@ package is.ru.tictactoe;
 
 public class Point {
 
-	protected int x;
-	protected int y;
+	private int x;
+	private int y;
 
 	//default constructor
 	public Point(){
@@ -23,6 +23,14 @@ public class Point {
 
 	public int getY(){
 		return y;
+	}
+
+	public void setX(int xx){
+		x = xx;
+	}
+
+	public void setY(int yy){
+		y = yy;
 	}
 
 	public Point getPoint(){
