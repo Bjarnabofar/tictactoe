@@ -16,6 +16,10 @@ public class Cell {
 
 	}
 
+	public void setSign(char m){
+		sign = m;
+	}
+
 	public void main(String[] args){
 		
 	}

@@ -8,25 +8,42 @@ import org.junit.Test;
 
 public class BoardTest{
 
+	Board board = new Board();
+
 	//Stub class for Point
 	public class StubPoint extends Point{
+		public StubPoint(){
 
-		public boolean isAvailable(){
-			return true;
 		}
+
+		public StubPoint(int xx, int yy){ 
+			x = xx;
+			y = yy;
+		}
+
 	}
 
 	@Test
 	public void testSize(){
-		Board board = new Board();
 		assertEquals(3, board.getSize());
 	}
 
 	@Test
 	public void testWhenCellInBoardIsAvailable(){
-
-		Board board = new Board();
 		assertTrue(board.isAvailable(new StubPoint()));
 	}
 
+	@Test
+	public void testWhenCellIsUpdatedByX(){
+		StubPoint s = new StubPoint(1, 1);
+		board.updateBoard(s,'X');
+		assertFalse(board.isAvailable(s));
+	}
+
+	@Test
+	public void testWhenCellIsUpdatedByO(){
+		StubPoint s = new StubPoint(1, 1);
+		board.updateBoard(s,'O');
+		assertFalse(board.isAvailable(s));
+	}
 }

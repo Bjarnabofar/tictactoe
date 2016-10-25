@@ -2,8 +2,8 @@ package is.ru.tictactoe;
 
 public class Point {
 
-	private int x;
-	private int y;
+	protected int x;
+	protected int y;
 
 	//default constructor
 	public Point(){
@@ -12,9 +12,9 @@ public class Point {
 	}
 
 	//Constructor for new point
-	public Point(int xx, int yy){
-		x = xx;
-		y = yy;
+	public Point(int x, int y){
+		this.x = x;
+		this.y = y;
 	}
 
 	public int getX(){
