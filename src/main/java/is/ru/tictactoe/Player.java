@@ -13,4 +13,16 @@ public class Player {
 	public int getWins() {
 		return wins;
 	}
+	public int getLosses() {
+		return losses;
+	}
+
+	public int getDraws() {
+		return draws;
+	}
+
+	public char getSign() {
+		return sign;
+	}
+
 }
