@@ -28,12 +28,12 @@ public class Point {
 	}
 	
 	//setter function for x
-	public int setX(int xx){
+	public void setX(int xx){
 		x = xx;
 	}
 	
 	//setter function for y
-	public int setY(int yy){
+	public void setY(int yy){
 		y = yy;
 	}
 
