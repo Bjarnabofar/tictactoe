@@ -33,10 +33,22 @@ public class Board
 
 	public void displayBoard(){
 		for(int y = 0; y < getSize(); y++){
+
 			for(int x = 0; x < getSize(); x++){
-				System.out.print(board[y][x].getSign() + " ");
+
+				System.out.print(board[y][x].getSign());
+				if(getSize()-1 != x)
+				{
+					System.out.print( " | ");
+				}
 			}
-			System.out.println();
+			if(getSize()-1 != y)
+			{
+				System.out.println();
+				System.out.println("- - - - -");
+				
+			}
+
 		}
 	}
 
