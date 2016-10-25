@@ -30,4 +30,25 @@ public class PlayerTest{
 		Player p = new Player();
 		assertEquals('X', p.getSign());
 	}
+
+	@Test
+	public void testAddWins(){
+		Player p = new Player();
+		p.addWin();
+		assertEquals(1, p.getWins());
+	}
+
+	@Test
+	public void testAddLosses(){
+		Player p = new Player();
+		p.addLoss();
+		assertEquals(1, p.getLosses());
+	}
+
+	@Test
+	public void testAddDraw(){
+		Player p = new Player();
+		p.addDraw();
+		assertEquals(1, p.getDraws());
+	}
 }

@@ -24,5 +24,14 @@ public class Player {
 	public char getSign() {
 		return sign;
 	}
+	public void addWin() {
+		wins++;
+	}
 
+	public void addLoss() {
+		losses++;
+	}
+	public void addDraw() {
+		draws++;
+	}
 }
