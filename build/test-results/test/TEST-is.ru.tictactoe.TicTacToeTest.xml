@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.ru.tictactoe.TicTacToeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-10-25T20:33:58" hostname="megatron-PC" time="0.001">
+<testsuite name="is.ru.tictactoe.TicTacToeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-10-25T22:02:33" hostname="megatron-PC" time="0.0">
   <properties/>
-  <testcase name="testWelcome" classname="is.ru.tictactoe.TicTacToeTest" time="0.001"/>
+  <testcase name="testWelcome" classname="is.ru.tictactoe.TicTacToeTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
