@@ -16,3 +16,4 @@ build/
 .gradle/
 build/*
 .gradle/*
+!org.gradle.wrapper.GradleWrapperMain
