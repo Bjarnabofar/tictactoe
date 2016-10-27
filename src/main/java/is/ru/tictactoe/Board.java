@@ -82,6 +82,9 @@ public class Board
 		else if (checkColumns() != Winner.NONE){
 			return true;
 		}
+		else if (checkDiagonals() != Winner.NONE){
+			return true;
+		}
 
 		return false;
 	}
@@ -132,8 +135,44 @@ public class Board
 			countX = 0;
 			countO = 0;
 		}
-		
+
 		return Winner.NONE;
+	}
+
+	public Winner checkDiagonals() {
+		int countX = 0;
+		int countO = 0;
+		int j = 0;
+		Winner w = Winner.NONE;
+		// top left -> right bottom
+	    for (int i = 0; i < getSize(); i++) {
+	        if (board[i][j].getSign() == 'X') {
+	            countX++;
+	        }
+	        else if (board[i][j].getSign() == 'O') {
+	            countO++;
+	        }
+	        j++;
+	    }
+	    w = getWinner(countX, countO);
+	    if (w == Winner.NONE) {
+	    	countX = 0;
+	    	countO = 0;
+	    	j = getSize()-1;
+	    	for(int i = 0; i < getSize(); i++) {
+	    		if (board[i][j].getSign() == 'X') {
+	    			countX++;
+	    		}
+	    		else if (board[i][j].getSign() == 'O') {
+	           		countO++;
+	       		}
+	       		j--;
+	    	}
+	    	w = getWinner(countX, countO);
+	    }
+
+	    return w;
+
 	}
 
 	public Winner getWinner(int numX, int numO){
@@ -148,11 +187,6 @@ public class Board
 		}
 
 	}
-
-	public boolean checkDiagonals(){
-		return true;
-	}
-
 
 	public void main(String[] args){
 		

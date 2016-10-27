@@ -119,6 +119,29 @@ public class BoardTest{
 		assertTrue(board.hasWinner());
 	}
 
+	@Test
+	public void testIfOIsWinnerDiagonallyTopLeftToRightBottom(){
+		StubPoint a = new StubPoint(0,0);
+		StubPoint b = new StubPoint(1,1);
+		StubPoint c = new StubPoint(2,2);
+
+		board.updateBoard(a, 'O');
+		board.updateBoard(b, 'O');
+		board.updateBoard(c, 'O');
+		assertTrue(board.hasWinner());
+	}
+
+	@Test
+	public void testIfXIsWinnerDiagonallyTopRightToLeftBottom(){
+		StubPoint a = new StubPoint(0,2);
+		StubPoint b = new StubPoint(1,1);
+		StubPoint c = new StubPoint(2,0);
+
+		board.updateBoard(a, 'X');
+		board.updateBoard(b, 'X');
+		board.updateBoard(c, 'X');
+		assertTrue(board.hasWinner());
+	}
 
 
 
