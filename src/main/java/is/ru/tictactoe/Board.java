@@ -9,6 +9,12 @@ public class Board
 	private int size;
 	private Cell[][] board;
 
+	public enum Winner {
+		winnerX,
+		winnerO,
+		NONE
+	}
+
 	//default constructor initialize tictactoe board with size 3
 	public Board()
 	{
@@ -46,7 +52,6 @@ public class Board
 			{
 				System.out.println();
 				System.out.println("- - - - -");
-				
 			}
 
 		}
@@ -67,6 +72,63 @@ public class Board
 
 	public Cell getCellAtPoint(Point p){
 		return board[p.getX()][p.getY()];
+	}
+
+	public boolean hasWinner(){
+
+		Winner theWinner = Winner.NONE;
+		theWinner = checkRows();
+		if(theWinner != Winner.NONE)
+		{
+			return true;
+		}
+		return false;
+	}
+
+	private Winner checkRows(){
+
+		int countX = 0;
+		int countO = 0;
+
+		for(int i = 0; i < getSize(); i++){
+			for(int j = 0; j < getSize(); j++){
+				if(board[i][j].getSign() == 'X'){
+					countX++;
+				}
+				else if(board[i][j].getSign() == 'O'){
+					countO++;
+				}
+				if(countX == getSize() || countO == getSize())
+				{
+					return getWinner(countX, countO);
+				}
+			}
+			countX = 0;
+			countO = 0;
+		}
+
+		return Winner.NONE;
+	}
+
+	public Winner getWinner(int numX, int numO){
+		if(numX == getSize()){
+			return Winner.winnerX;
+		}
+		else if(numO == getSize()){
+			return Winner.winnerO;
+		}
+		else{
+			return Winner.NONE;
+		}
+
+	}
+
+	public boolean checkColumns(){
+		return true;
+	}
+
+	public boolean checkDiagonals(){
+		return true;
 	}
 
 
