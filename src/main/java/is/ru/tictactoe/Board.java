@@ -76,12 +76,13 @@ public class Board
 
 	public boolean hasWinner(){
 
-		Winner theWinner = Winner.NONE;
-		theWinner = checkRows();
-		if(theWinner != Winner.NONE)
-		{
+		if(checkRows() != Winner.NONE){
 			return true;
 		}
+		else if (checkColumns() != Winner.NONE){
+			return true;
+		}
+
 		return false;
 	}
 
@@ -110,6 +111,31 @@ public class Board
 		return Winner.NONE;
 	}
 
+	private Winner checkColumns(){
+
+		int countX = 0;
+		int countO = 0;
+
+		for(int i = 0; i < getSize(); i++){
+			for(int j = 0; j < getSize(); j++){
+				if(board[j][i].getSign() == 'X'){
+					countX++;
+				}
+				else if(board[j][i].getSign() == 'O'){
+					countO++;
+				}
+				if(countX == getSize() || countO == getSize())
+				{
+					return getWinner(countX, countO);
+				}
+			}
+			countX = 0;
+			countO = 0;
+		}
+		
+		return Winner.NONE;
+	}
+
 	public Winner getWinner(int numX, int numO){
 		if(numX == getSize()){
 			return Winner.winnerX;
@@ -121,10 +147,6 @@ public class Board
 			return Winner.NONE;
 		}
 
-	}
-
-	public boolean checkColumns(){
-		return true;
 	}
 
 	public boolean checkDiagonals(){
