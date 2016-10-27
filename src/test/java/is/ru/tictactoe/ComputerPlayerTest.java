@@ -1,6 +1,6 @@
 package is.ru.tictactoe;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import org.junit.Test;
 import is.ru.tictactoe.Point;
 import is.ru.tictactoe.ComputerPlayer;
