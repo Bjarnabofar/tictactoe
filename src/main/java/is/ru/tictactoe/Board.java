@@ -24,6 +24,7 @@ public class Board
 
 	}
 
+	//initialize cells with the sign '.'
 	public void initBoard(){
 		for(int y = 0; y < getSize(); y++){
 			for(int x = 0; x < getSize(); x++){
@@ -36,7 +37,7 @@ public class Board
 		return size;
 	}
 
-
+	//display function for console
 	public void displayBoard(){
 		for(int y = 0; y < getSize(); y++){
 
@@ -57,6 +58,7 @@ public class Board
 		}
 	}
 
+	//check if there is X or O in particular cell in point p
 	public boolean isAvailable(Point p){
 		if(board[p.getX()][p.getY()].getSign() == 'X' || board[p.getX()][p.getY()].getSign() == 'O'){
 			return false;
@@ -74,6 +76,8 @@ public class Board
 		return board[p.getX()][p.getY()];
 	}
 
+
+	//return true if there is winner
 	public boolean hasWinner(){
 
 		if(checkRows() != Winner.NONE){
@@ -89,6 +93,7 @@ public class Board
 		return false;
 	}
 
+	//check if there is winner in rows
 	private Winner checkRows(){
 
 		int countX = 0;
@@ -102,8 +107,7 @@ public class Board
 				else if(board[i][j].getSign() == 'O'){
 					countO++;
 				}
-				if(countX == getSize() || countO == getSize())
-				{
+				if(countX == getSize() || countO == getSize()){
 					return getWinner(countX, countO);
 				}
 			}
@@ -114,6 +118,7 @@ public class Board
 		return Winner.NONE;
 	}
 
+	//check if there is winner in columns
 	private Winner checkColumns(){
 
 		int countX = 0;
@@ -127,8 +132,7 @@ public class Board
 				else if(board[j][i].getSign() == 'O'){
 					countO++;
 				}
-				if(countX == getSize() || countO == getSize())
-				{
+				if(countX == getSize() || countO == getSize()){
 					return getWinner(countX, countO);
 				}
 			}
@@ -144,26 +148,28 @@ public class Board
 		int countO = 0;
 		int j = 0;
 		Winner w = Winner.NONE;
+		
 		// top left -> right bottom
-	    for (int i = 0; i < getSize(); i++) {
-	        if (board[i][j].getSign() == 'X') {
+	    for (int i = 0; i < getSize(); i++){
+	        if (board[i][j].getSign() == 'X'){
 	            countX++;
 	        }
-	        else if (board[i][j].getSign() == 'O') {
+	        else if (board[i][j].getSign() == 'O'){
 	            countO++;
 	        }
 	        j++;
 	    }
+
 	    w = getWinner(countX, countO);
-	    if (w == Winner.NONE) {
+	    if (w == Winner.NONE){
 	    	countX = 0;
 	    	countO = 0;
 	    	j = getSize()-1;
-	    	for(int i = 0; i < getSize(); i++) {
-	    		if (board[i][j].getSign() == 'X') {
+	    	for(int i = 0; i < getSize(); i++){
+	    		if (board[i][j].getSign() == 'X'){
 	    			countX++;
 	    		}
-	    		else if (board[i][j].getSign() == 'O') {
+	    		else if (board[i][j].getSign() == 'O'){
 	           		countO++;
 	       		}
 	       		j--;
@@ -172,9 +178,9 @@ public class Board
 	    }
 
 	    return w;
-
 	}
 
+	//returns the winnerX or winnerO
 	public Winner getWinner(int numX, int numO){
 		if(numX == getSize()){
 			return Winner.winnerX;
@@ -185,7 +191,6 @@ public class Board
 		else{
 			return Winner.NONE;
 		}
-
 	}
 
 	public void main(String[] args){
