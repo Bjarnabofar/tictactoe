@@ -15,7 +15,7 @@ public class ComputerPlayerTest {
 		int hi = 3;
 		int x = p.getX();
 
-		assertTrue("error invalid value: " + x, x > lo && x < hi);
+		assertTrue(x > lo && x < hi);
 	}
 
 	@Test
@@ -27,6 +27,6 @@ public class ComputerPlayerTest {
 		int hi = 3;
 		int y = p.getY();
 
-		assertTrue("error invalid value: " + y, y > lo && y < hi);
+		assertTrue(y > lo && y < hi);
 	}
 }
