@@ -2,8 +2,9 @@ package is.ru.tictactoe;
 
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
-import is.ru.tictactoe.ComputerPlayer;
 import is.ru.tictactoe.Point;
+import is.ru.tictactoe.ComputerPlayer;
+
 
 public class ComputerPlayerTest {
 	@Test
