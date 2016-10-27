@@ -12,6 +12,3 @@
 hs_err_pid*
 
 # Gradle
-build/
-build/*
-!gradlew.bat
