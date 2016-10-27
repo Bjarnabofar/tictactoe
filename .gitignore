@@ -13,7 +13,4 @@ hs_err_pid*
 
 # Gradle
 build/
-.gradle/
 build/*
-.gradle/*
-!org.gradle.wrapper.GradleWrapperMain
