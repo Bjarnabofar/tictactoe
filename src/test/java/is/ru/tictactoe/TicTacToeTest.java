@@ -12,5 +12,11 @@ public class TicTacToeTest{
 		TicTacToe t = new TicTacToe();
 		assertEquals("Welcome to TicTacToe!", t.welcome());
 	}
+
+	@Test
+	public void testGetNumberOfGames(){
+		TicTacToe t = new TicTacToe();
+		assertEquals(0, t.getNumberOfGames());
+	}
 }
 
