@@ -1,6 +1,6 @@
 package is.ru.tictactoe;
 
-public class Player {
+public abstract class Player {
 	private char sign;
 	private int wins;
 	private int losses;
@@ -34,4 +34,6 @@ public class Player {
 	public void addDraw() {
 		draws++;
 	}
+
+	protected abstract Point getMove();
 }
