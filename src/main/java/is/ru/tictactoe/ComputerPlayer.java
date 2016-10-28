@@ -1,7 +1,11 @@
 package is.ru.tictactoe;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class ComputerPlayer {
+public class ComputerPlayer extends Player{
+
+	public ComputerPlayer () {
+		sign = 'O';
+	}
 
 	public Point getMove() {
 
