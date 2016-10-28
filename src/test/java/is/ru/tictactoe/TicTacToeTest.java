@@ -9,8 +9,8 @@ public class TicTacToeTest{
 	
 	@Test
 	public void testWelcome(){
-		TicTacToe t = new TicTacToe();
-		assertEquals("Welcome to TicTacToe!", t.welcome());
+		assertEquals("Welcome to TicTacToe!", TicTacToe.welcome());
 	}
+	
 }
 
