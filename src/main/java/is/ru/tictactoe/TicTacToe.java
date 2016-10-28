@@ -1,24 +1,31 @@
 package is.ru.tictactoe;
+import is.ru.tictactoe.Point;
+import is.ru.tictactoe.Board;
+import is.ru.tictactoe.Player;
+import is.ru.tictactoe.HumanPlayer;
+import is.ru.tictactoe.ComputerPlayer;
 
-public class TicTacToe{
+public class TicTacToe
+{
 
 	private int numberOfGames;
 	private HumanPlayer human;
 	private ComputerPlayer computer;
 	private Board board;
-	private Player playerWithLastTurn;
+	private char lastTurn;
 
-	public String welcome(){
+	public static String welcome(){
 		return ("Welcome to TicTacToe!");
 	}
 
-	public TicTacToe() {
+	public TicTacToe(){
 		numberOfGames = 0;
-		human = new HumanPlayer('X');
-		computer = new ComputerPlayer('O');
+		human = new HumanPlayer();
+		computer = new ComputerPlayer();
+		board = new Board();
 	}
 
-	public int getNumberOfGames() {
+	public int getNumberOfGames(){
 		return numberOfGames;
 	}
 
@@ -26,36 +33,42 @@ public class TicTacToe{
 		numberOfGames++;
 	}
 
-	private boolean gameisOver() {
+	private boolean gameIsOver() {
 		if(board.hasWinner() || board.isDraw())
 			return true;
 		else
 			return false;
 	}
 
-	public oneTurn() {
-		playerWithLastTurn = human;
-		do {
-				Point pointHuman = human.getMove();
-		}while(!isCellAvailable(pointHuman));
-		putSign(pointHuman, human.getSign());
+	private void printScoreboard() {
+		System.out.println("The score is: --- You: " + human.getWins() + " --- Computer: " + computer.getWins() + " --- Ties: " + getNumberOfGames()-human.getWins()-computer.getWins());
+	}
 
-		if(!board.gameIsOver()) {
+	public void oneTurn() {
+		lastTurn = 'X';
+		Point pointHuman;
+		Point pointComputer;
+		do {
+				pointHuman = human.getMove();
+		}while(!board.isAvailable(pointHuman));
+		board.updateBoard(pointHuman, human.getSign());
+
+		if(!gameIsOver()) {
 			do {
-					playerWithLastTurn = computer;
-					Point pointComputer = computer.getMove();
-			}while(!isCellAvailable(pointComputer));
-			putSign(pointComputer, computer.getSign());
+					lastTurn = 'Y';
+					pointComputer = computer.getMove();
+			}while(!board.isAvailable(pointComputer));
+			board.updateBoard(pointComputer, computer.getSign());
 		}
 		board.displayBoard();
 	}
 
-	private oneRound() {
+	private void oneRound() {
 		do {
 			oneTurn();
 		}while(!gameIsOver());
-		if(board.hasWinner) {
-			if(human == playerWithLastTurn) {
+		if(board.hasWinner()) {
+			if(lastTurn == 'X') {
 				human.addWin();
 				System.out.println("Congratulations you won!!");
 			}
@@ -71,18 +84,19 @@ public class TicTacToe{
 		printScoreboard();
 	}
 
-	public playGame() {
+	public void playGame() {
 		char answer;
 		do {
 			do {
 				System.out.println("Do you want to play another TicTacToe? (y = yes) (n = no");
-				answer = System.in.read();
-			}while(answer != y && answer != n);
-		}while(answer == y);
+				answer = (char)System.in.read();
+			}while(answer != 'y' && answer != 'n');
+		}while(answer == 'y');
 	}
 
-	//public static void main(String[] args){
-			//System.out.println(welcome());
-	//}
+	public static void main(String[] args){
+		TicTacToe tictactoe = new TicTacToe();
+		tictactoe.playGame();
+	}
 }
 

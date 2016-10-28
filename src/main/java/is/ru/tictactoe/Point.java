@@ -1,20 +1,21 @@
 package is.ru.tictactoe;
 
 public class Point {
+
 	private int x;
 	private int y;
 	
 	//default constructor, probably not used tho
+
 	public Point(){
 		x = 0;
 		y = 0;
 	}
-	
-	//another constructor takes x and y as parameters and 
-	//constructs a point
-	public Point(int xx, int yy){
-		x = xx;
-		y = yy;
+
+	//Constructor for new point
+	public Point(int x, int y){
+		this.x = x;
+		this.y = y;
 	}
 
 	//getter function for x
@@ -37,8 +38,11 @@ public class Point {
 		y = yy;
 	}
 
-	//place holder main function
-	public void main(String[] args){
-		
+	public Point getPoint(){
+		Point point = new Point(x, y);
+		return point;
 	}
+
 }
+
+

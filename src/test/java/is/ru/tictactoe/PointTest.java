@@ -5,7 +5,19 @@ import is.ru.tictactoe.Point;
 
 import org.junit.Test;
 
-public class PointTest{
+public class PointTest {
+
+	@Test
+	public void testX(){
+		Point np = new Point(2, 2);
+		assertEquals(2, np.getX());
+	}
+
+	@Test
+	public void testY(){
+		Point np = new Point(2, 1);
+		assertEquals(1, np.getY());
+	}
 	
 	@Test
 	public void testDefaultPointConstructor(){
@@ -38,5 +50,5 @@ public class PointTest{
 		
 		
 	}
-	
+
 }
