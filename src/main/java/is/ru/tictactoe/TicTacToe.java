@@ -4,6 +4,7 @@ import is.ru.tictactoe.Board;
 import is.ru.tictactoe.Player;
 import is.ru.tictactoe.HumanPlayer;
 import is.ru.tictactoe.ComputerPlayer;
+import java.util.Scanner;
 
 public class TicTacToe
 {
@@ -29,7 +30,7 @@ public class TicTacToe
 		return numberOfGames;
 	}
 
-	private void addGame() {
+	public void addGame() {
 		numberOfGames++;
 	}
 
@@ -41,10 +42,12 @@ public class TicTacToe
 	}
 
 	private void printScoreboard() {
-		System.out.println("The score is: --- You: " + human.getWins() + " --- Computer: " + computer.getWins() + " --- Ties: " + getNumberOfGames()-human.getWins()-computer.getWins());
+		int ties = getNumberOfGames()- human.getWins()- computer.getWins();
+		System.out.println("The score is: --- You: " + human.getWins() + " --- Computer: " + computer.getWins() + " --- Ties: " + ties);
 	}
 
 	public void oneTurn() {
+		board.displayBoard();
 		lastTurn = 'X';
 		Point pointHuman;
 		Point pointComputer;
@@ -64,6 +67,7 @@ public class TicTacToe
 	}
 
 	private void oneRound() {
+		board.displayBoard();
 		do {
 			oneTurn();
 		}while(!gameIsOver());
@@ -85,13 +89,14 @@ public class TicTacToe
 	}
 
 	public void playGame() {
-		char answer;
+		Scanner terminalInput = new Scanner(System.in);
+		String answer;
 		do {
 			do {
 				System.out.println("Do you want to play another TicTacToe? (y = yes) (n = no");
-				answer = (char)System.in.read();
-			}while(answer != 'y' && answer != 'n');
-		}while(answer == 'y');
+				answer = terminalInput.nextLine();
+			}while(answer != "y" && answer != "n");
+		}while(answer == "y");
 	}
 
 	public static void main(String[] args){
