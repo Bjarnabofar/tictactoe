@@ -13,4 +13,6 @@ public class CellTest {
 		assertEquals('.', c.getSign());
 	}
 
+	
+
 }

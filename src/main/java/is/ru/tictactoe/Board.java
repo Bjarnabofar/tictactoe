@@ -193,6 +193,24 @@ public class Board
 		}
 	}
 
+	//Checks if it is draw
+	public boolean isDraw(){
+		int count = 0; 
+		for(int i = 0; i < getSize(); i++){
+			for(int j = 0; j < getSize(); j++){
+				if(board[i][j].getSign() == 'X' || board[i][j].getSign() == 'O'){
+					count++;
+				}
+			}
+		}
+
+		if(count == getSize()*getSize()){
+			return true;
+		}
+
+		return false;
+	}
+
 	public void main(String[] args){
 		
 	}

@@ -8,12 +8,10 @@ public class Cell {
 
 	public Cell(){
 		sign = defaultChar;
-
 	}
 
 	public char getSign(){
 		return sign;
-
 	}
 
 	public void setSign(char m){

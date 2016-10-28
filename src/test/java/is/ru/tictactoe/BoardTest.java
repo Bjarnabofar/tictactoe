@@ -143,6 +143,36 @@ public class BoardTest{
 		assertTrue(board.hasWinner());
 	}
 
+	@Test
+	public void testIfItIsDraw(){
+		StubPoint a = new StubPoint(0,0);
+		StubPoint b = new StubPoint(0,1);
+		StubPoint c = new StubPoint(0,2);
+		StubPoint d = new StubPoint(1,0);
+		StubPoint e = new StubPoint(1,1);
+		StubPoint f = new StubPoint(1,2);
+		StubPoint g = new StubPoint(2,0);
+		StubPoint h = new StubPoint(2,1);
+		StubPoint i = new StubPoint(2,2);
+
+		board.updateBoard(a, 'O');
+		board.updateBoard(b, 'X');
+		board.updateBoard(c, 'X');
+		board.updateBoard(d, 'X');
+		board.updateBoard(e, 'O');
+		board.updateBoard(f, 'O');
+		board.updateBoard(g, 'X');
+		board.updateBoard(h, 'O');
+		board.updateBoard(i, 'X');
+
+		assertTrue(board.isDraw());
+	}
+
+	@Test 
+	public void testWhenThereIsNoDraw(){
+		assertFalse(board.isDraw());
+	}
+
 
 
 
