@@ -4,6 +4,12 @@ import java.util.*;
 import is.ru.tictactoe.Cell;
 import is.ru.tictactoe.Point;
 
+/**
+ * Board class contains functions regarding the board in tictactoe.
+ * The class updates cells, check if cell is available and checks if there is 
+ * a winner or tie
+ * @author: Bjarnabofarnir
+ */
 public class Board
 {
 	private int size;
@@ -15,7 +21,9 @@ public class Board
 		NONE
 	}
 
-	//default constructor initialize tictactoe board with size 3
+	/**
+     * default constructor initialize tictactoe board with size 3
+     */
 	public Board()
 	{
 		size = 3;
@@ -24,7 +32,9 @@ public class Board
 
 	}
 
-	//initialize cells with the sign '.'
+	/**
+     * initialize cells with the sign '.'
+     */
 	public void initBoard(){
 		for(int y = 0; y < getSize(); y++){
 			for(int x = 0; x < getSize(); x++){
@@ -37,7 +47,9 @@ public class Board
 		return size;
 	}
 
-	//display function for console
+	/**
+     * display function for console
+     */
 	public void displayBoard(){
 		for(int y = 0; y < getSize(); y++){
 
@@ -54,11 +66,12 @@ public class Board
 				System.out.println();
 				System.out.println("- - - - -");
 			}
-
 		}
 	}
 
-	//check if there is X or O in particular cell in point p
+	/**
+     * @param: Point Check if there is X or O in particular cell in point p
+     */
 	public boolean isAvailable(Point p){
 		if(board[p.getX()][p.getY()].getSign() == 'X' || board[p.getX()][p.getY()].getSign() == 'O'){
 			return false;
@@ -66,18 +79,28 @@ public class Board
 		return true;
 	}
 
+	/**
+     * @param: Point Updates the cell at corresponding point
+     * @param: Updates the cell with the char in move 
+     */
 	public void updateBoard(Point p, char move){
 		if(isAvailable(p)){
 			board[p.getX()][p.getY()].setSign(move);
 		}
 	}
 
+	/**
+	 * @param: Point is the point we want to position the cell
+     * @return: cell at the corresponding point
+     */
 	public Cell getCellAtPoint(Point p){
 		return board[p.getX()][p.getY()];
 	}
 
 
-	//return true if there is winner
+	/**
+     * @return: return true if there is winner in the game
+     */
 	public boolean hasWinner(){
 
 		if(checkRows() != Winner.NONE){
@@ -93,7 +116,10 @@ public class Board
 		return false;
 	}
 
-	//check if there is winner in rows
+	/**
+     * @return: checks if there is winner in rows. Returns WinnerX, WinnerO or NONE. If it returns for example WinnerX then X is the winner.
+     * If it return NONE there is no winner.
+     */
 	private Winner checkRows(){
 
 		int countX = 0;
@@ -118,7 +144,10 @@ public class Board
 		return Winner.NONE;
 	}
 
-	//check if there is winner in columns
+	/**
+     * @return: checks if there is winner in columns. Returns WinnerX, WinnerO or NONE. If it returns for example WinnerX then X is the winner.
+     * If it return NONE there is no winner.
+     */
 	private Winner checkColumns(){
 
 		int countX = 0;
@@ -143,6 +172,11 @@ public class Board
 		return Winner.NONE;
 	}
 
+
+	/**
+     * @return: checks if there is winner in Diagonals. Returns WinnerX, WinnerO or NONE. If it returns for example WinnerX then X is the winner.
+     * If it return NONE there is no winner.
+     */
 	public Winner checkDiagonals() {
 		int countX = 0;
 		int countO = 0;
@@ -180,7 +214,10 @@ public class Board
 	    return w;
 	}
 
-	//returns the winnerX or winnerO
+	/**
+	 * @param: numX if numX is 3 then X is the winner. numO if numO is 3 then O is the winner
+     * @return: returns the winnerX or winnerO if there is winner. If there is no winner it returns NONE
+     */
 	public Winner getWinner(int numX, int numO){
 		if(numX == getSize()){
 			return Winner.winnerX;
@@ -193,7 +230,9 @@ public class Board
 		}
 	}
 
-	//Checks if it is draw
+	/**
+     * @return: true if there is no winner and letters in every cell
+     */
 	public boolean isDraw(){
 		int count = 0; 
 		for(int i = 0; i < getSize(); i++){
