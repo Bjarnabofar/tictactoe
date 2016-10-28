@@ -11,7 +11,6 @@ public class ComputerPlayerTest {
 	public void testRandomPointX() {
 		ComputerPlayer cp = new ComputerPlayer();
 		Point p = cp.getMove();
-
 		int lo = 0;
 		int hi = 3;
 		int x = p.getX();
