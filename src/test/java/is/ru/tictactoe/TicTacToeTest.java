@@ -13,10 +13,19 @@ public class TicTacToeTest{
 	}
 
 	@Test
-	public void testGetNumberOfGames(){
+	public void testGetNumberOfGamesZero(){
 		TicTacToe t = new TicTacToe();
 		assertEquals(0, t.getNumberOfGames());
 	}
 
+	@Test
+	public void testGetNumberOfGamesMany(){
+		TicTacToe t = new TicTacToe();
+		t.addGame();
+		t.addGame();
+		t.addGame();
+		t.addGame();
+		assertEquals(4, t.getNumberOfGames());
+	}
 }
 
