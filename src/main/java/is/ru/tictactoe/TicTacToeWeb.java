@@ -19,10 +19,10 @@ public class TicTacToeWeb implements SparkApplication{
 		      tttWeb.init();
 	}
 
-	/*@Override
+	@Override
     public void init() {
     	final TicTacToe ttt = new TicTacToe();    
 	    get("/", (req, res) -> ttt.welcome());
 	    //get("/", (req, res) -> ttt.welcome());
-	}*/
+	}
 }

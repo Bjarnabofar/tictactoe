@@ -26,6 +26,15 @@ public class TicTacToe
 	private ComputerPlayer computer;
 	private Board board;
 	private char lastTurn;
+
+	/**
+     * Welcomes the user to the game!
+     */
+	public static String welcome() {
+		String welcome = "Welcome to TicTacToe!";
+		return welcome;
+	}
+
 	/**
      * Constructor for the TicTacToe class
      */
