@@ -4,7 +4,8 @@ import is.ru.tictactoe.Board;
 import is.ru.tictactoe.Player;
 import is.ru.tictactoe.HumanPlayer;
 import is.ru.tictactoe.ComputerPlayer;
-import java.util.Scanner;
+import java.io.IOException;
+import java.util.*;
 
 public class TicTacToe
 {
@@ -89,19 +90,24 @@ public class TicTacToe
 	}
 
 	public void playGame() {
-		Scanner terminalInput = new Scanner(System.in);
-		String answer;
-		do {
+		int answer = 1;
+		
+		try {
 			do {
-				System.out.println("Do you want to play another TicTacToe? (y = yes) (n = no");
-				answer = terminalInput.nextLine();
-			}while(answer != "y" && answer != "n");
-		}while(answer == "y");
+					System.out.println("Do you want to play another TicTacToe? (1 = yes) (2 = no)");
+					answer = System.in.read();
+				oneRound();
+			}while(answer == 1);
+		}catch (IOException e){
+            System.out.println("Error reading from user");
+        }
+	
 	}
 
 	public static void main(String[] args){
 		TicTacToe tictactoe = new TicTacToe();
 		tictactoe.playGame();
+		return;
 	}
 }
 
