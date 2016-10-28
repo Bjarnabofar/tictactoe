@@ -10,6 +10,13 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.util.Scanner;
 
+/**
+ * The TicTacToe class is the brain of the application.
+ * It contains the business logic behind the game by
+ * connecting all the other classes together.
+ * It runs the game.
+ * @author: Bjarnabofarnir
+ */
 
 public class TicTacToe
 {
@@ -19,11 +26,9 @@ public class TicTacToe
 	private ComputerPlayer computer;
 	private Board board;
 	private char lastTurn;
-
-	public static String welcome(){
-		return ("Welcome to TicTacToe!");
-	}
-
+	/**
+     * Constructor for the TicTacToe class
+     */
 	public TicTacToe(){
 		numberOfGames = 0;
 		human = new HumanPlayer();
@@ -31,26 +36,39 @@ public class TicTacToe
 		board = new Board();
 	}
 
+	/**
+     * @return: the variable numberOfGames, that keeps track of games played.
+     */
 	public int getNumberOfGames(){
 		return numberOfGames;
 	}
-
+	/**
+	 * Increases the number of games played.
+	 */
 	public void addGame() {
 		numberOfGames++;
 	}
 
+	/**
+     * @return: true if the game is over, false otherwise.
+     */
 	private boolean gameIsOver() {
 		if(board.hasWinner() || board.isDraw())
 			return true;
 		else
 			return false;
 	}
-
+	/**
+     * Prints out the scoreboard, i.e. human player wins, computer player wins and ties.
+     */
 	private void printScoreboard() {
 		int ties = getNumberOfGames()- human.getWins()- computer.getWins();
 		System.out.println("The score is: --- You: " + human.getWins() + " --- Computer: " + computer.getWins() + " --- Ties: " + ties);
 	}
 
+	/**
+     * Asks each player to make one move, and makes sure the move is legal.
+     */
 	public void oneTurn() {
 		lastTurn = 'X';
 		Point pointHuman;
@@ -65,13 +83,15 @@ public class TicTacToe
 			board.displayBoard();
 			System.out.println("Computer is creating a masterplan to beat you...");
 			do {
-				lastTurn = 'Y';
+				lastTurn = 'O';
 				pointComputer = computer.getMove();
 			}while(!board.isAvailable(pointComputer));
 			board.updateBoard(pointComputer, computer.getSign());
 		}
 	}
-
+	/**
+     * Playes one whole round of tictactoe. One round is classified as one game of TicTacToe.
+     */
 	private void oneRound() {
 		do {
 			oneTurn();
@@ -93,7 +113,9 @@ public class TicTacToe
 		addGame();
 		printScoreboard();
 	}
-
+	/**
+     * Starts the game and plays another round until user wants to stop.
+     */
 	public void playGame() {
 		Scanner sc = new Scanner(System.in);
 		int answer = 1;
