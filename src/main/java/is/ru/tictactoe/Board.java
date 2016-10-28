@@ -56,6 +56,7 @@ public class Board
 			}
 
 		}
+		System.out.println();
 	}
 
 	//check if there is X or O in particular cell in point p

@@ -65,3 +65,7 @@ task stage {
 
     dependsOn installDist
 }
+
+run {
+    standardInput = System.in
+}

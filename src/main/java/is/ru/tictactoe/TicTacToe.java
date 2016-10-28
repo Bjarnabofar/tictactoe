@@ -6,6 +6,10 @@ import is.ru.tictactoe.HumanPlayer;
 import is.ru.tictactoe.ComputerPlayer;
 import java.io.IOException;
 import java.util.*;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.util.Scanner;
+
 
 public class TicTacToe
 {
@@ -48,30 +52,31 @@ public class TicTacToe
 	}
 
 	public void oneTurn() {
-		board.displayBoard();
 		lastTurn = 'X';
 		Point pointHuman;
 		Point pointComputer;
+		board.displayBoard();
 		do {
-				pointHuman = human.getMove();
+			pointHuman = human.getMove();
 		}while(!board.isAvailable(pointHuman));
 		board.updateBoard(pointHuman, human.getSign());
 
 		if(!gameIsOver()) {
+			board.displayBoard();
+			System.out.println("Computer is creating a masterplan to beat you...");
 			do {
-					lastTurn = 'Y';
-					pointComputer = computer.getMove();
+				lastTurn = 'Y';
+				pointComputer = computer.getMove();
 			}while(!board.isAvailable(pointComputer));
 			board.updateBoard(pointComputer, computer.getSign());
 		}
-		board.displayBoard();
 	}
 
 	private void oneRound() {
-		board.displayBoard();
 		do {
 			oneTurn();
 		}while(!gameIsOver());
+		board.displayBoard();
 		if(board.hasWinner()) {
 			if(lastTurn == 'X') {
 				human.addWin();
@@ -90,18 +95,16 @@ public class TicTacToe
 	}
 
 	public void playGame() {
+		Scanner sc = new Scanner(System.in);
 		int answer = 1;
-		
-		try {
-			do {
-					System.out.println("Do you want to play another TicTacToe? (1 = yes) (2 = no)");
-					answer = System.in.read();
-				oneRound();
-			}while(answer == 1);
-		}catch (IOException e){
-            System.out.println("Error reading from user");
-        }
-	
+		do {
+			oneRound();
+			System.out.println("Do you want to play another TicTacToe? (1 = yes) (2 = no)");
+			answer = sc.nextInt();
+			sc.nextLine();
+			board.initBoard();
+
+		} while(answer == 1);
 	}
 
 	public static void main(String[] args){
