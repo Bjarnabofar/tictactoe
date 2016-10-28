@@ -7,9 +7,16 @@ import is.ru.tictactoe.ComputerPlayer;
 
 
 public class ComputerPlayerTest {
+	
+	@Test
+	public void testGetSing(){
+		Player p = new ComputerPlayer();
+		assertEquals('O', p.getSign());
+	}
+
 	@Test
 	public void testRandomPointX() {
-		ComputerPlayer cp = new ComputerPlayer();
+		Player cp = new ComputerPlayer();
 		Point p = cp.getMove();
 		int lo = 0;
 		int hi = 3;
@@ -20,7 +27,7 @@ public class ComputerPlayerTest {
 
 	@Test
 	public void testRandomPointY() {
-		ComputerPlayer cp = new ComputerPlayer();
+		Player cp = new ComputerPlayer();
 		Point p = cp.getMove();
 
 		int lo = 0;

@@ -1,13 +1,23 @@
 package is.ru.tictactoe;
-
 import java.io.IOException;
 
+/**
+ * @author: Bjarnabofarnir
+ * HumanPlayer class inherits from Player class, to get 
+ * current move and the sign
+ */
 public class HumanPlayer extends Player {
-
+	/**
+     * Sets the default sign for human player as X
+     */
 	public HumanPlayer () {
 		sign = 'X';
 	}
-	
+
+	/**
+     * reads in the desired position (x,y)
+     * @return: the new Point that the user will be position on
+     */
 	public Point getMove() {
 		int x = 0, y = 0;
 
