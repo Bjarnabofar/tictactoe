@@ -4,6 +4,10 @@ import java.io.IOException;
 
 public class HumanPlayer extends Player {
 
+	public HumanPlayer () {
+		sign = 'X';
+	}
+	
 	public Point getMove() {
 		int x = 0, y = 0;
 
