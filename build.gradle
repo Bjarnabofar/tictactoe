@@ -27,6 +27,14 @@ repositories {
 	mavenCentral()
 }
 
+<<<<<<< HEAD
+=======
+// JavaDoc
+task myJavadocs(type: Javadoc) {
+    source = sourceSets.main.allJava
+}
+
+>>>>>>> 83bcefcb0f12a7e8306b872fcc1cd32e0a3b1d1b
 
 
 //Jacoco is a code coverage plugin for java.
