@@ -11,15 +11,22 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-# Test results
-!build/reports/tests/test/index.html
+# Test results / build folder
+build/distributions/*
+build/libs/*
+build/scripts/*
+build/classes/*
+build/dependency-cache/*
+build/jacoco/*
+build/resources/*
+build/tmp/*
+build/test-results/*
+
 
 # Gradle
 *.bin
 !gradle/wrapper/gradle-wrapper.jar
-build/*
 .gradle/*
 gradle*
 
-# Test results
-!build/reports/tests/test/index.html
+
