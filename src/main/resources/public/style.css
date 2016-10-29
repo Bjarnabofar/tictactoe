@@ -150,3 +150,12 @@
 		color: #a83f5c;
 		text-decoration: none;
 	}
+
+	#results {
+		color: #ffffff;
+	}
+
+	#game {
+		color: #ffffff;
+		font-size: 32px;
+	}
