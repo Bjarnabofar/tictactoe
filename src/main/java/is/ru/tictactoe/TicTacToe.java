@@ -35,6 +35,9 @@ public class TicTacToe
 		return (size * p.getX()) + p.getY() + 1;
 	}
 
+	public void initBoard() {
+		board.initBoard();
+	}
 	/**
      * Welcomes the user to the game!
      */
@@ -44,7 +47,7 @@ public class TicTacToe
 	}
 
 	public boolean updateBoard(int x, int y, char move) {
-		if (board.isAvailable(x,y)){
+		if (board.isAvailable(x, y)){
 			board.updateBoard(x, y, move);
 			return true;
 		}
@@ -77,7 +80,7 @@ public class TicTacToe
 	/**
      * @return: true if the game is over, false otherwise.
      */
-	private boolean gameIsOver() {
+	public boolean gameIsOver() {
 		if(board.hasWinner() || board.isDraw())
 			return true;
 		else
@@ -126,6 +129,15 @@ public class TicTacToe
 	/**
      * Playes one whole round of tictactoe. One round is classified as one game of TicTacToe.
      */
+
+	public boolean hasWinner() {
+		return board.hasWinner();
+	}
+
+	public char getWinner() {
+		return board.getWinner();
+	}
+
 	private void oneRound() {
 		do {
 			oneTurn();
