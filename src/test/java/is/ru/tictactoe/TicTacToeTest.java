@@ -12,6 +12,7 @@ public class TicTacToeTest{
 			setX(x);
 			setY(y);
 		}
+	}
 	
 	@Test
 	public void testWelcome(){
@@ -35,10 +36,10 @@ public class TicTacToeTest{
 	}
 
 	@Test
-	public void test2dTo1d(){
+	public void testxyTo1d(){
 		StubPoint sp = new StubPoint(0,0);
 		TicTacToe t = new TicTacToe();
-		assertEquals(1, t.2dTo1d(sp));
+		assertEquals(1, t.xyTo1d(sp));
 	}
 }
 
