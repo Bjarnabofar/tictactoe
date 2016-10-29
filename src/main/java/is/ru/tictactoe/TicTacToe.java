@@ -28,6 +28,14 @@ public class TicTacToe
 	private char lastTurn;
 
 	/**
+	* @return: the 1d form of the given tile
+	*/
+	private int 2dTo1d(Point p) {
+		int size = board.getSize();
+		return (size * p.getX()) +p.getY() + 1;
+	}
+
+	/**
      * Welcomes the user to the game!
      */
 	public static String welcome() {
