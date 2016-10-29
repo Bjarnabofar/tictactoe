@@ -151,10 +151,11 @@
 		text-decoration: none;
 	}
 
-	#welcome {
+	#results {
 		color: #ffffff;
 	}
 
 	#game {
 		color: #ffffff;
+		font-size: 32px;
 	}

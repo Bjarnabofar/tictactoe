@@ -14,11 +14,16 @@ public class Board
 {
 	private int size;
 	private Cell[][] board;
+	private char BOARD_WINNER = 'N';
 
 	public enum Winner {
 		winnerX,
 		winnerO,
 		NONE
+	}
+
+	public char getWinner() {
+		return BOARD_WINNER;
 	}
 
 	/**
@@ -36,6 +41,7 @@ public class Board
      * initialize cells with the sign '.'
      */
 	public void initBoard(){
+		BOARD_WINNER = 'N';
 		for(int y = 0; y < getSize(); y++){
 			for(int x = 0; x < getSize(); x++){
 				board[y][x] = new Cell();
@@ -233,9 +239,11 @@ public class Board
      */
 	public Winner getWinner(int numX, int numO){
 		if(numX == getSize()){
+			BOARD_WINNER = 'X';
 			return Winner.winnerX;
 		}
 		else if(numO == getSize()){
+			BOARD_WINNER = 'O';
 			return Winner.winnerO;
 		}
 		else{

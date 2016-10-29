@@ -2,14 +2,36 @@ $(document).ready(function() {
 	// get welcome message to confirm an established conneciton
 	updateBoard();
 
-	$.ajax({
+	/*$.ajax({
 		type: 'GET',
 		url: '/welcome',
 		data: null,
 		success: function (msg) {
 			$('#welcome').html(msg);
 		}
-	});
+	});*/
+	function checkWinner() {
+		$.ajax({
+			type: 'GET',
+			url: '/gameIsOver',
+			data: null,
+			success: function (res) {
+				console.log(res);
+				if (res == 'true') {
+					$.get("/getWinner", function(winner) {
+						if (winner == 'N') {
+							$("#results").html("AND THE WINNER IS.... NOBODY!!!");
+						}
+						else {
+							$("#results").html("AND THE WINNER IS.... " + winner + "!!!");
+						}
+  						
+					});
+				}
+			}
+		});
+	}
+
 	// update board
 	function updateBoard() {
 		$.ajax({
@@ -26,7 +48,8 @@ $(document).ready(function() {
 						$('#board_' +i+""+tile).html(val.sign);
 						//console.log(val.sign);
 					});
-				}); 
+				});
+				checkWinner();
 			}
 		});
 	}
@@ -57,12 +80,23 @@ $(document).ready(function() {
 			success: function(data) {
 				if (data) {
 					computerMove();
-					console.log(data);
+					console.log("made move: " + data);
 					updateBoard();	
 				}
 			}
 		});	
 		
 	});
+	$('body').delegate('#restart', 'click', function() {
+		$.ajax({
+			type: 'POST',
+			url: '/initBoard',
+			success: function() {
+				$('#results').html("Wating for results....");
+				updateBoard();	
+			}
+		});	
+	});
+
 
 });
