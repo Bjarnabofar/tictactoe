@@ -20,6 +20,13 @@ repositories {
     jcenter()
 }
 
+// JavaDoc
+task myJavadocs(type: Javadoc) {
+    source = sourceSets.main.allJava
+}
+
+
+
 //Jacoco is a code coverage plugin for java.
 jacoco {
     toolVersion = "0.7.6.201602180812"
