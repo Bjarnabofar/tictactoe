@@ -19,4 +19,7 @@ hs_err_pid*
 !gradle/wrapper/gradle-wrapper.jar
 build/*
 .gradle/*
-gradle/*
+gradle*
+
+# Test results
+!build/reports/tests/test/index.html
