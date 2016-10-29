@@ -80,6 +80,12 @@ public class Board
 		return true;
 	}
 
+	public boolean isAvailable(int x, int y){
+		if(board[x][y].getSign() == 'X' || board[x][y].getSign() == 'O'){
+			return false;
+		}
+		return true;
+	}
 	/**
      * @param: Point Updates the cell at corresponding point
      * @param: Updates the cell with the char in move 
@@ -87,6 +93,12 @@ public class Board
 	public void updateBoard(Point p, char move){
 		if(isAvailable(p)){
 			board[p.getX()][p.getY()].setSign(move);
+		}
+	}
+
+	public void updateBoard(int x, int y, char move){
+		if(isAvailable(x, y)){
+			board[x][y].setSign(move);
 		}
 	}
 

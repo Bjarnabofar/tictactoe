@@ -59,6 +59,7 @@ dependencies {
     //compile 'com.sparkjava:sparl-template-jade:2.3'
 
     compile 'org.slf4j:slf4j-simple:1.7.9'
+    compile 'com.google.code.gson:gson:2.7'
 }
 
 task stage {

@@ -30,7 +30,7 @@ public class TicTacToe
 	/**
 	* @return: the 1d form of the given tile
 	*/
-	private int xyTo1d(Point p) {
+	public int xyTo1d(Point p) {
 		int size = board.getSize();
 		return (size * p.getX()) + p.getY() + 1;
 	}
@@ -41,6 +41,10 @@ public class TicTacToe
 	public static String welcome() {
 		String welcome = "Welcome to TicTacToe!";
 		return welcome;
+	}
+
+	public void updateBoard(int x, int y, char move) {
+		board.updateBoard(x, y, move);
 	}
 
 	/**
