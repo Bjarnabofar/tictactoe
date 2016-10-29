@@ -1,5 +1,5 @@
 package is.ru.tictactoe;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.*;
 
     /**
      * @author: Bjarnabofarnir
@@ -20,9 +20,10 @@ public class ComputerPlayer extends Player{
      * @return: the new Point that the computer will be position on
      */
 	public Point getMove() {
+		Random rn = new Random();
 
-		int x = ThreadLocalRandom.current().nextInt(3);
-		int y = ThreadLocalRandom.current().nextInt(3);
+		int x = rn.nextInt(3);
+		int y = rn.nextInt(3);
 
 		Point p = new Point(x, y);
 
