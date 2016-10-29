@@ -13,6 +13,6 @@ hs_err_pid*
 
 # Gradle
 *.bin
-!gradle/wrapper/gradle-wrapper.jar
+#!gradle/wrapper/gradle-wrapper.jar
 build/*
-.gradle/*
+#.gradle/*
