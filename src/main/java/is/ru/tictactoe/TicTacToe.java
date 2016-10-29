@@ -43,8 +43,12 @@ public class TicTacToe
 		return welcome;
 	}
 
-	public void updateBoard(int x, int y, char move) {
-		board.updateBoard(x, y, move);
+	public boolean updateBoard(int x, int y, char move) {
+		if (board.isAvailable(x,y)){
+			board.updateBoard(x, y, move);
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -109,6 +113,15 @@ public class TicTacToe
 			}while(!board.isAvailable(pointComputer));
 			board.updateBoard(pointComputer, computer.getSign());
 		}
+	}
+
+	public Point computerMove() {
+		Point pointComputer;
+		do {
+			pointComputer = computer.getMove();
+		}while(!board.isAvailable(pointComputer));
+		board.updateBoard(pointComputer, computer.getSign());
+		return pointComputer;
 	}
 	/**
      * Playes one whole round of tictactoe. One round is classified as one game of TicTacToe.

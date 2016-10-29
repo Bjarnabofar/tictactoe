@@ -21,32 +21,48 @@ $(document).ready(function() {
 				size = test.size;
 				$.each(test.board, function(i, v) {
 					$.each(v, function(tile, val) {
-						console.log(i);
-						console.log(tile);
+						//console.log(i);
+						//console.log(tile);
 						$('#board_' +i+""+tile).html(val.sign);
-						console.log(val.sign);
+						//console.log(val.sign);
 					});
 				}); 
 			}
 		});
 	}
-
+	function computerMove() {
+		$.ajax({
+			type: 'GET',
+			url: '/computerMove',
+			dataType: 'json',
+			data: null,
+			success: function (msg) {
+				console.log(msg);
+			}
+		});
+	}
+	// When player makes a move
 	$('body').delegate('#game td', 'click', function() {
 		var self = $(this);
 		var arr = self.attr('id').split('_');
 		var x = arr[1].substring(0,1);
 		var y = arr[1].substring(1,2);
-		console.log("x: " + x);
-		console.log("y: " + y);
+		//console.log("x: " + x);
+		//console.log("y: " + y);
 		$.ajax({
 			type: 'POST',
 			url: '/humanMove',
 			dataType: 'json',
 			data: {x: x, y: y, move: 'X'},
-		});		
-
-		updateBoard();
-		return false;
+			success: function(data) {
+				if (data) {
+					computerMove();
+					console.log(data);
+					updateBoard();	
+				}
+			}
+		});	
+		
 	});
 
 });

@@ -29,13 +29,15 @@ public class TicTacToeWeb implements SparkApplication{
 	    get("/getBoard", (req, res) -> ttt.getBoard(), gson::toJson);
 
 	    post("/humanMove", (req, res) -> {
-            ttt.updateBoard(
+            boolean test = ttt.updateBoard(
                 Integer.parseInt(req.queryParams("x")),
                 Integer.parseInt(req.queryParams("y")),
                 req.queryParams("move").charAt(0)
             );          
             res.status(200);
-            return res;
+            return test;
         });
+
+        get("/computerMove", (req, res) -> ttt.computerMove());
 	}
 }
