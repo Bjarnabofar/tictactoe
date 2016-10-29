@@ -12,16 +12,8 @@
 hs_err_pid*
 
 # Test results / build folder
-#build/distributions/*
-#build/libs/*
-#build/scripts/*
-#build/classes/*
-#build/dependency-cache/*
-#build/jacoco/*
-#build/resources/*
-#build/tmp/*
-#build/test-results/*
-
+build/*
+!build/reports/tests/test/index.html
 
 # Gradle
 *.bin
