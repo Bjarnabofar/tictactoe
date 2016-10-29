@@ -16,14 +16,7 @@ build/*
 
 # Gradle
 *.bin
-<<<<<<< HEAD
 #!gradle/wrapper/gradle-wrapper.jar
 build/*
 #.gradle/*
-=======
-!gradle/wrapper/gradle-wrapper.jar
-.gradle/*
 gradle*
-
-
->>>>>>> 83bcefcb0f12a7e8306b872fcc1cd32e0a3b1d1b
