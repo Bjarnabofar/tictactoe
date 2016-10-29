@@ -28,11 +28,27 @@ public class TicTacToe
 	private char lastTurn;
 
 	/**
+	* @return: the 1d form of the given tile
+	*/
+	public int xyTo1d(Point p) {
+		int size = board.getSize();
+		return (size * p.getX()) + p.getY() + 1;
+	}
+
+	/**
      * Welcomes the user to the game!
      */
 	public static String welcome() {
 		String welcome = "Welcome to TicTacToe!";
 		return welcome;
+	}
+
+	public boolean updateBoard(int x, int y, char move) {
+		if (board.isAvailable(x,y)){
+			board.updateBoard(x, y, move);
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -98,6 +114,15 @@ public class TicTacToe
 			board.updateBoard(pointComputer, computer.getSign());
 		}
 	}
+
+	public Point computerMove() {
+		Point pointComputer;
+		do {
+			pointComputer = computer.getMove();
+		}while(!board.isAvailable(pointComputer));
+		board.updateBoard(pointComputer, computer.getSign());
+		return pointComputer;
+	}
 	/**
      * Playes one whole round of tictactoe. One round is classified as one game of TicTacToe.
      */
@@ -123,8 +148,12 @@ public class TicTacToe
 		printScoreboard();
 	}
 	/**
-     * Starts the game and plays another round until user wants to stop.
+     * @return: the game board
      */
+	public Board getBoard() {
+		return board;
+	}
+
 	public void playGame() {
 		Scanner sc = new Scanner(System.in);
 		int answer = 1;

@@ -11,7 +11,7 @@ apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'jacoco'
 
-mainClassName = "is.ru.tictactoe.TicTacToe"
+mainClassName = "is.ru.tictactoe.TicTacToeWeb"
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -59,6 +59,7 @@ dependencies {
     //compile 'com.sparkjava:sparl-template-jade:2.3'
 
     compile 'org.slf4j:slf4j-simple:1.7.9'
+    compile 'com.google.code.gson:gson:2.7'
 }
 
 task stage {
