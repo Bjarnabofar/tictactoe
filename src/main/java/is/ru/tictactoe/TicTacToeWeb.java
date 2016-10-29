@@ -16,12 +16,13 @@ public class TicTacToeWeb implements SparkApplication{
 		        if (port != null) {
 				port(Integer.valueOf(port));
 			}
-		      tttWeb.init();
+		    tttWeb.init();
 	}
 
 	@Override
     public void init() {
     	final TicTacToe ttt = new TicTacToe();    
 	    get("/welcome", (req, res) -> ttt.welcome());
+	    get("/getBoard", (req, res) -> ttt.getBoard());
 	}
 }

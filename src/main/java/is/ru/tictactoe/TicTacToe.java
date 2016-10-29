@@ -30,9 +30,9 @@ public class TicTacToe
 	/**
 	* @return: the 1d form of the given tile
 	*/
-	private int 2dTo1d(Point p) {
+	private int xyTo1d(Point p) {
 		int size = board.getSize();
-		return (size * p.getX()) +p.getY() + 1;
+		return (size * p.getX()) + p.getY() + 1;
 	}
 
 	/**
@@ -131,8 +131,12 @@ public class TicTacToe
 		printScoreboard();
 	}
 	/**
-     * Starts the game and plays another round until user wants to stop.
+     * @return: the game board
      */
+	public Board getBoard() {
+		return board;
+	}
+
 	public void playGame() {
 		Scanner sc = new Scanner(System.in);
 		int answer = 1;
