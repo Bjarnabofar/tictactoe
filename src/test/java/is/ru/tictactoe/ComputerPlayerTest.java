@@ -7,14 +7,14 @@ import is.ru.tictactoe.ComputerPlayer;
 
 
 public class ComputerPlayerTest {
-	
+
 	@Test
 	public void testGetSing(){
 		Player p = new ComputerPlayer();
 		assertEquals('O', p.getSign());
 	}
 
-	@Test
+	/*@Test
 	public void testRandomPointX() {
 		Player cp = new ComputerPlayer();
 		Point p = cp.getMove();
@@ -35,5 +35,5 @@ public class ComputerPlayerTest {
 		int y = p.getY();
 
 		assertTrue(y > lo && y < hi);
-	}
+	}*/
 }
