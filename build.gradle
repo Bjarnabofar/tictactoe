@@ -11,7 +11,7 @@ apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'jacoco'
 apply plugin: 'groovy'
-//apply plugin: "com.palantir.jacoco-full-report"	 
+apply plugin: 'com.github.kt3k.coveralls' version '2.6.3'
 
 
 mainClassName = "is.ru.tictactoe.TicTacToeWeb"
@@ -36,7 +36,6 @@ task myJavadocs(type: Javadoc) {
 
 //Jacoco is a code coverage plugin for java.
 jacoco {
-	applyTo run
     toolVersion = "0.7.6.201602180812"
     reportsDir = file("$buildDir/customJacocoReportDir")
 }
@@ -44,15 +43,12 @@ jacoco {
 
 
 jacocoTestReport{
-	//remove if not coolbeans
-    additionalSourceDirs = files(sourceSets.main.allJava.srcDirs)
     reports {
-        xml.enabled false
+		html.enabled true
+        xml.enabled true
         csv.enabled false
         html.destination "${buildDir}/reports/jacoco/html"
     }
-	//remove if notcoolbeans
-    executionData = files('build/jacoco/test.exec')
 }
 
 

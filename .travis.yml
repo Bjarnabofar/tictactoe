@@ -4,6 +4,9 @@ jdk:
 notifications:
   email: false
 
+after_success:
+- ./gradlew jacocoTestReport coveralls
+  
 deploy:
   provider: heroku
   api_key:
