@@ -2,7 +2,7 @@ package is.ru.tictactoe;
 
 /**
  * The Cell class gets and returns the char values for the sign in each cell. 
- * @author: Bjarnabofarnir
+ * @author Bjarnabofarnir
  */
 
 public class Cell {
@@ -19,14 +19,14 @@ public class Cell {
 	}
 
 	/**
-     * @return: return the sign in the cell
+     * @return sign which is the sign in the cell
      */
 	public char getSign(){
 		return sign;
 	}
 
 	/**
-     * @param: assigns the char m to sign in the cell
+     * @param m which assigns the char to sign in the cell
      */
 	public void setSign(char m){
 		sign = m;
