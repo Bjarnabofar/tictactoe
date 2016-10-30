@@ -11,8 +11,6 @@ apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'jacoco'
 apply plugin: 'groovy'
-apply plugin: 'com.github.kt3k.coveralls' version '2.6.3'
-
 
 mainClassName = "is.ru.tictactoe.TicTacToeWeb"
 
@@ -79,6 +77,7 @@ dependencies {
     
     compile 'com.sparkjava:spark-core:2.5'
 
+	
     //compile 'com.sparkjava:sparl-template-jade:2.3'
 
     compile 'org.slf4j:slf4j-simple:1.7.9'
@@ -94,6 +93,7 @@ dependencies {
 
 
 }
+
 
 task stage {
 
