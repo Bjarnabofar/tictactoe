@@ -1,3 +1,7 @@
+---
+title: Development manual for tictactoe
+---
+
 # Development manual for tictactoe
 
 ##Download gradle

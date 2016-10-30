@@ -1,3 +1,7 @@
+---
+title: Administration manual for tictactoe
+---
+
 # Administration manual for tictactoe
 
 ##Run the game
