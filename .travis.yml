@@ -1,11 +1,10 @@
 language: java
 jdk:
-  - oraclejdk8
+- oraclejdk8
 notifications:
   email: false
-
 deploy:
   provider: heroku
-  api_key: 
-    secure: 07eb5-ee5a-40ad-b1e5-bc14ee92ee47
+  api_key:
+    secure: FXfI4OxJxhBpRezuaLPSEecaG5DnjPVk34LD90hFjRkcRBKV4+IJrmgAfO9NsDuVkpC+Jp2Rm399Y7CcNvorNk2/1fU4tU5sxYrmPhIT6FyYKwbGul1GRxsSojZs61UPTIKHDuhfOEa5iw4wtF00ZU7lcvbt1xwxTTddGMxihLhnNoacnxxRexdFyTrOcZ2bBQ3hf6VS9V/xOujYra/rWDPfogGjZGsV0tapa+CZeom0SmkDMHhaNQ8NQ3soIgUmQPETV2qD2YHh3niyqpzS9+NAYFtxQX/pM/9NQzObQhbhCh37AIWgFtkGmrONowJxumj4ziYo2IQy0OK/dD9im3VRslZDRUFrpeuhrYN4AQqL60jUj9n4aEiQfBkQ90lVGsEHpwsHzRD7Y/xIi0iNJTs58Fed8pJ54MhNXaY8IRaVlPhan05c277hnyaMVNL6VP6ZtzVrLv0B/gQy4OWAlmynEpiQmiIu4byt8x3MadECYt3aJXm0JtWQPhJca8jmEouJTiWli83R3ywcwciDu4djxEob0o5j8LnrFie7vh1I4i6UdcMD0Qq6OKgkIypJIEreo/lwT093zwDEdvJxh+8YOkkeVeN15EiSf2CRMzpsDkDTcxNkcBbQESN8JBHj872Qxu6R/PA+IVsNG7aaWsfW3FDs4bNdhqfOpGN/iEo=
   app: serene-falls-48635
