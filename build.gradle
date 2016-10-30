@@ -51,7 +51,6 @@ task myJavadocs(type: Javadoc) {
 //Jacoco is a code coverage plugin for java.
 jacoco {
     toolVersion = "0.7.6.201602180812"
-    reportsDir = file("$buildDir/customJacocoReportDir")
 }
 
 
@@ -61,9 +60,10 @@ jacocoTestReport{
 		html.enabled = true
         xml.enabled = true
         csv.enabled false
-        html.destination "${buildDir}/reports/jacoco/html"
     }
 }
+test.finalizedBy jacocoTestReport
+
 
 //further jacoco config and setup
 test {
