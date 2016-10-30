@@ -1,3 +1,7 @@
+﻿---
+title: Design Report for tictactoe
+---
+
 # Design Report for tictactoe
 
 ##T-303-HUGB Hugbúnaðarfræði  -  late term assignment

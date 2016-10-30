@@ -14,11 +14,16 @@ public class Board
 {
 	private int size;
 	private Cell[][] board;
+	private char BOARD_WINNER = 'N';
 
 	public enum Winner {
 		winnerX,
 		winnerO,
 		NONE
+	}
+
+	public char getWinner() {
+		return BOARD_WINNER;
 	}
 
 	/**
@@ -36,6 +41,7 @@ public class Board
      * initialize cells with the sign '.'
      */
 	public void initBoard(){
+		BOARD_WINNER = 'N';
 		for(int y = 0; y < getSize(); y++){
 			for(int x = 0; x < getSize(); x++){
 				board[y][x] = new Cell();
@@ -80,6 +86,12 @@ public class Board
 		return true;
 	}
 
+	public boolean isAvailable(int x, int y){
+		if(board[x][y].getSign() == 'X' || board[x][y].getSign() == 'O'){
+			return false;
+		}
+		return true;
+	}
 	/**
      * @param: Point Updates the cell at corresponding point
      * @param: Updates the cell with the char in move 
@@ -87,6 +99,12 @@ public class Board
 	public void updateBoard(Point p, char move){
 		if(isAvailable(p)){
 			board[p.getX()][p.getY()].setSign(move);
+		}
+	}
+
+	public void updateBoard(int x, int y, char move){
+		if(isAvailable(x, y)){
+			board[x][y].setSign(move);
 		}
 	}
 
@@ -221,9 +239,11 @@ public class Board
      */
 	public Winner getWinner(int numX, int numO){
 		if(numX == getSize()){
+			BOARD_WINNER = 'X';
 			return Winner.winnerX;
 		}
 		else if(numO == getSize()){
+			BOARD_WINNER = 'O';
 			return Winner.winnerO;
 		}
 		else{

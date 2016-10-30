@@ -1,5 +1,11 @@
 language: java
 jdk:
-  - oraclejdk8
+- oraclejdk8
 notifications:
   email: false
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: 54a07eb5-ee5a-40ad-b1e5-bc14ee92ee47
+  app: serene-falls-48635
