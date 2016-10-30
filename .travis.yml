@@ -7,7 +7,7 @@ notifications:
 
 script:
 - ./gradlew check
-- ./gradlew seleniumXvfp
+- ./gradlew seleniumXvfb
 
 after_success:
 - ./gradlew jacocoTestReport coveralls
