@@ -17,5 +17,7 @@ build/*
 # Gradle
 *.bin
 !gradle/wrapper/gradle-wrapper.jar
-#build/*
 .gradle/*
+
+# Live documentation
+_site/
