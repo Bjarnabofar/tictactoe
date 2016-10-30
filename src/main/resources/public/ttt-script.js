@@ -10,6 +10,16 @@ $(document).ready(function() {
 			$('#welcome').html(msg);
 		}
 	});*/
+
+	function restartGame() {
+		$.ajax({
+			type: 'POST',
+			url: '/initBoard',
+			success: function() {
+				updateBoard();	
+			}
+		});	
+	}
 	function checkWinner() {
 		$.ajax({
 			type: 'GET',
@@ -25,6 +35,7 @@ $(document).ready(function() {
 						else {
 							$("#results").html("AND THE WINNER IS.... " + winner + "!!!");
 						}
+						restartGame();
   						
 					});
 				}
@@ -88,14 +99,7 @@ $(document).ready(function() {
 		
 	});
 	$('body').delegate('#restart', 'click', function() {
-		$.ajax({
-			type: 'POST',
-			url: '/initBoard',
-			success: function() {
-				$('#results').html("Wating for results....");
-				updateBoard();	
-			}
-		});	
+		restartGame();
 	});
 
 
