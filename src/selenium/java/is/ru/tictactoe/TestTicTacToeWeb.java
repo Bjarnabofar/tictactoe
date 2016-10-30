@@ -6,7 +6,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import static org.hamcrest.CoreMatchers.*;
 import java.util.*;
- 
 
 //The Selenium test are unstable because they are testing towards random computer player
 //If problems occur with the selenium tests please contact: thorhildurt15@ru.is
@@ -17,15 +16,15 @@ public class TestTicTacToeWeb extends SeleniumTestWrapper {
     
     	driver.get(baseUrl);
 
-    	//driver.findElement(By.id("restart")).click();
+    	driver.findElement(By.id("restart")).click();
       	WebElement inputXIn11 = driver.findElement(By.id("board_11"));
       	inputXIn11.click();
-      	//Thread.sleep(3000);
+      	Thread.sleep(3000);
 		assertEquals("X", inputXIn11.getText());
 		//driver.findElement(By.id("restart")).click();
     }
 
-    @Test
+   /* @Test
     public void intitialMessageMatches() throws  InterruptedException {
         Thread.sleep(1000);
         driver.get(baseUrl);
@@ -110,5 +109,5 @@ public class TestTicTacToeWeb extends SeleniumTestWrapper {
 
         //Thread.sleep(3000);
         assertTrue(isRestart);
-    }
+    }*/
 }
