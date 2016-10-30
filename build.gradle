@@ -20,6 +20,10 @@ repositories {
     jcenter()
 }
 
+sourceSets {
+    selenium
+}
+
 //Jacoco is a code coverage plugin for java.
 jacoco {
     toolVersion = "0.7.6.201602180812"
@@ -60,11 +64,22 @@ dependencies {
 
     compile 'org.slf4j:slf4j-simple:1.7.9'
     compile 'com.google.code.gson:gson:2.7'
+
+
+    // Selenium dependencies
+    seleniumCompile 'junit:junit:4.11'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-firefox-driver:3.0.1'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.0.1'
 }
 
 task stage {
 
     dependsOn installDist
+}
+
+task selenium(type: Test, dependsOn: installDist) {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
 }
 
 run {
