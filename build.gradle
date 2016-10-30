@@ -123,7 +123,7 @@ task seleniumXvfb(type: Test, dependsOn: installDist) {
     environment "DISPLAY", ":99"
 
     doFirst {
-        'bin/xvfb start'.execute()
+        //'bin/xvfb start'.execute()
         'build/install/tictactoe/bin/tictactoe &'.execute()
     }
 
