@@ -17,5 +17,5 @@ build/*
 # Gradle
 *.bin
 !gradle/wrapper/gradle-wrapper.jar
-#build/*
+!*.html
 .gradle/*
