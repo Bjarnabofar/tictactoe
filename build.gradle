@@ -55,30 +55,34 @@ jacoco {
 }
 
 
-
+//jacoco setup
 jacocoTestReport{
     reports {
 		html.enabled = true
         xml.enabled = true
-//        csv.enabled false
-//        html.destination "${buildDir}/reports/jacoco/html"
+        csv.enabled false
+        html.destination "${buildDir}/reports/jacoco/html"
     }
 }
 
-
-task applicationCodeCoverageReport(type:JacocoReport){
-    executionData run
-    sourceSets sourceSets.main
-}
-
-
+//further jacoco config and setup
 test {
     jacoco {
         append = false
-		destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
-		classDumpFile = file("$buildDir/jacoco/classpathdumps")
+        destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
+        classDumpFile = file("$buildDir/jacoco/classpathdumps")
     }
 }
+
+
+
+//task applicationCodeCoverageReport(type:JacocoReport){
+//    executionData run
+//    sourceSets sourceSets.main
+//}
+
+
+
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
