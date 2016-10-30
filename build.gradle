@@ -118,7 +118,7 @@ task seleniumXvfb(type: Test, dependsOn: installDist) {
     classpath = sourceSets.selenium.runtimeClasspath
 
     doFirst {
-        'build/intbtstall/tictactoe/bin/tictactoe &'.execute()
+       'build/install/tictactoe/bin/tictactoe &'.execute()
     }
 
     doLast {
