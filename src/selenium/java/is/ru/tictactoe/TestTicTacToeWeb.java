@@ -24,7 +24,7 @@ public class TestTicTacToeWeb extends SeleniumTestWrapper {
 		//driver.findElement(By.id("restart")).click();
     }
 
-   /* @Test
+    /*@Test
     public void intitialMessageMatches() throws  InterruptedException {
         Thread.sleep(1000);
         driver.get(baseUrl);
@@ -49,7 +49,7 @@ public class TestTicTacToeWeb extends SeleniumTestWrapper {
         }
     }
 
-    @Test
+    /*@Test
     public void testIfItIsTie() throws  InterruptedException {
     
     	driver.get(baseUrl);
