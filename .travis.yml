@@ -9,6 +9,3 @@ deploy:
   api_key: 
     secure: 07eb5-ee5a-40ad-b1e5-bc14ee92ee47
   app: serene-falls-48635
-  on:
-    all_branches: true
-    
