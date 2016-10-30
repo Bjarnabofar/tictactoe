@@ -1,6 +1,7 @@
 ﻿---
-layout: document
-title: Design Report for tictactoe
+layout: post
+title: "Design Report for tictactoe"
+date: 2016-10-30
 ---
 
 # Design Report for tictactoe

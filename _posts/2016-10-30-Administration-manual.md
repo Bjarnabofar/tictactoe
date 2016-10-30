@@ -1,6 +1,7 @@
 ---
-layout: document
-title: Administration manual for tictactoe
+layout: post
+title: "Administration manual for tictactoe"
+date: 2016-10-30
 ---
 
 # Administration manual for tictactoe

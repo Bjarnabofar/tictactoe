@@ -1,6 +1,7 @@
 ---
-layout: document
-title: Development manual for tictactoe
+layout: post
+title: "Development manual for tictactoe"
+date: 2016-10-30
 ---
 
 # Development manual for tictactoe

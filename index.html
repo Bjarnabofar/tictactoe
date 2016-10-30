@@ -1,13 +1,15 @@
 ---
-layout: default
-title: TicTacToe project
+layout: post
+title: "TicTacToe project"
+date: 2016-10-30
 ---
 <div class="blurb">
   <h1>Hi, there this is the Bjarnabófar tictactoe website!</h1>
   <p>Please take a look at all the documentations!</p>
-  <ul>
-    {% for document in site.documents %}
-      <li><a href="{{ document.url }}" title="{{ document.title }}">{{ document.title }}</a></li>
+  <ul class="posts">
+
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
 </div><!-- /.blurb -->
