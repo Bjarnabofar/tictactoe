@@ -17,6 +17,7 @@ public abstract class SeleniumTestWrapper {
     @BeforeClass
     public static void openBrowser(){
         
+        System.setProperty("webdriver.firefox.profile", "default");
         driver = new FirefoxDriver();
         //driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
