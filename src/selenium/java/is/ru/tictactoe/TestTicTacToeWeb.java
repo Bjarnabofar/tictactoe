@@ -21,13 +21,10 @@ public class TestTicTacToeWeb extends SeleniumTestWrapper {
     public void testInputX() {
     
     	driver.get(baseUrl);
-    	
-      	WebElement inputXIn01 = driver.findElement(By.id("board_01"));
-      	inputXIn01.click();
 
       	WebElement inputXIn11 = driver.findElement(By.id("board_11"));
       	inputXIn11.click();
-
+		assertEquals("X", inputXIn11.getText());
     }
 
 
