@@ -5,9 +5,9 @@ import java.io.BufferedReader;
 import java.util.Scanner;
 
 /**
- * @author: Bjarnabofarnir
  * HumanPlayer class inherits from Player class, to get 
  * current move and the sign
+ * @author Bjarnabofarnir
  */
 public class HumanPlayer extends Player {
 	/**
@@ -19,7 +19,7 @@ public class HumanPlayer extends Player {
 
 	/**
      * reads in the desired position (x,y)
-     * @return: the new Point that the user will be position on
+     * @return p which is the new Point that the user will be position on
      */
 	public Point getMove() {
 		int x = 0, y = 0;
