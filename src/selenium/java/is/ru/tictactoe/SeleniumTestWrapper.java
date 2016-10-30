@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.*;
 
 
 public abstract class SeleniumTestWrapper {
@@ -25,6 +26,7 @@ public abstract class SeleniumTestWrapper {
 
     @AfterClass
     public static void closeBrowser(){
+
         driver.quit();
     }
 }
