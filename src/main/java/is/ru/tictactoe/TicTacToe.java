@@ -42,7 +42,7 @@ public class TicTacToe
      * Welcomes the user to the game!
      */
 	public static String welcome() {
-		String welcome = "Welcome to TicTacToe!";
+		String welcome = "Welcome to TicTacToe - hanna!";
 		return welcome;
 	}
 
