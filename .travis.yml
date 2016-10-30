@@ -8,4 +8,5 @@ deploy:
   provider: heroku
   api_key:
     secure: 54a07eb5-ee5a-40ad-b1e5-bc14ee92ee47
-  app: serene-falls-48635
+  master: serene-falls-48635
+  production: tictactoe-bjarnabofar
