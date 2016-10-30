@@ -39,7 +39,8 @@ buildscript {
 
 //Selenium test
 sourceSets {
-    selenium
+    	selenium
+	seleniumXvfb
 }
 
 // JavaDoc
@@ -100,6 +101,18 @@ dependencies {
     seleniumCompile 'junit:junit:4.11'
     seleniumCompile 'org.seleniumhq.selenium:selenium-firefox-driver:3.0.1'
     seleniumCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.0.1'
+<<<<<<< HEAD
+=======
+
+    seleniumXvfbCompile 'junit:junit:4.11'
+    seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-firefox-driver:3.0.1'
+    seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.0.1'
+
+    compile "org.codehaus.groovy:groovy-all:2.2.2"
+    testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
+
+
+>>>>>>> ab902aa7e7cd8fd1faca8d37afacd17dca1cb3a8
 }
 
 task stage {
@@ -109,6 +122,19 @@ task stage {
 task selenium(type: Test, dependsOn: installDist) {
     testClassesDir = sourceSets.selenium.output.classesDir
     classpath = sourceSets.selenium.runtimeClasspath
+}
+
+task seleniumXvfb(type: Test, dependsOn: installDist) {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+
+    doFirst {
+        'build/intbtstall/tictactoe/bin/tictactoe &'.execute()
+    }
+
+    doLast {
+        'sh -e /etc/init.d/xvfb stop'.execute()
+    }
 }
 
 run {
