@@ -58,10 +58,10 @@ jacoco {
 
 jacocoTestReport{
     reports {
-		html.enabled true
-        xml.enabled true
-        csv.enabled false
-        html.destination "${buildDir}/reports/jacoco/html"
+		html.enabled = true
+        xml.enabled = true
+//        csv.enabled false
+//        html.destination "${buildDir}/reports/jacoco/html"
     }
 }
 
