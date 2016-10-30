@@ -9,19 +9,22 @@ import org.openqa.selenium.*;
 
 public abstract class SeleniumTestWrapper {
     static ChromeDriver driver;
-    static String baseUrl;
+    static String baseUrl = "https://tictactoe-staging.herokuapp.com";
     static String port;
 
     @BeforeClass
     public static void openBrowser(){
+        
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        port = System.getenv("PORT");
+        /*port = System.getenv("PORT");
         if (port == null) {
             port = "4567";
         }
-        baseUrl = "http://localhost:" + port;
+        baseUrl = "http://localhost:" + port;*/
+
+        driver.get(baseUrl);
     }
 
     @AfterClass
