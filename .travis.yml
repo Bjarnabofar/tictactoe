@@ -15,6 +15,7 @@ before_install:
 
 script:
 - ./gradlew check
+- ./gradlew selenium
 
 after_success:
 - ./gradlew jacocoTestReport coveralls
