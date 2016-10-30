@@ -13,12 +13,9 @@ hs_err_pid*
 
 # Test results / build folder
 build/*
-!build/reports/tests/test/index.html
 
 # Gradle
 *.bin
 !gradle/wrapper/gradle-wrapper.jar
+#build/*
 .gradle/*
-gradle*
-
-
