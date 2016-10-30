@@ -4,6 +4,11 @@ jdk:
 notifications:
   email: false
 
+
+script:
+- ./gradlew check
+- ./gradlew seleniumxvfp
+
 after_success:
 - ./gradlew jacocoTestReport coveralls
   
