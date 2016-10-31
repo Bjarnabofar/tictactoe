@@ -31,7 +31,10 @@ deploy:
     master: tictactoe-staging
     production: tictactoe-production
 
-after_deploy:
-- ./gradlew seleniumXvfb --info 
+#after_deploy:
+#- ./gradlew seleniumXvfb
+
+script:
+- ./gradlew seleniumXvfb
 
 
