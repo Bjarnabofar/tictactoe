@@ -10,6 +10,18 @@ $(document).ready(function() {
 			$('#welcome').html(msg);
 		}
 	});*/
+
+	function restartGame() {
+		$('#game').css("color", "white");
+		$("#results").html("Waiting for results...");
+		$.ajax({
+			type: 'POST',
+			url: '/initBoard',
+			success: function() {
+				updateBoard();	
+			}
+		});	
+	}
 	function checkWinner() {
 		$.ajax({
 			type: 'GET',
@@ -25,7 +37,8 @@ $(document).ready(function() {
 						else {
 							$("#results").html("AND THE WINNER IS.... " + winner + "!!!");
 						}
-  						
+						$('#game').css("color", "red");
+						setTimeout(function(){ restartGame(); }, 2000);
 					});
 				}
 			}
@@ -34,6 +47,7 @@ $(document).ready(function() {
 
 	// update board
 	function updateBoard() {
+		checkWinner();
 		$.ajax({
 			type: 'GET',
 			url: '/getBoard',
@@ -54,15 +68,21 @@ $(document).ready(function() {
 		});
 	}
 	function computerMove() {
-		$.ajax({
-			type: 'GET',
-			url: '/computerMove',
-			dataType: 'json',
-			data: null,
-			success: function (msg) {
-				console.log(msg);
+		$.get("/getWinner", function(winner) {
+			console.log("winner: " + winner);
+			if (winner == 'N') {
+				$.ajax({
+					type: 'GET',
+					url: '/computerMove',
+					dataType: 'json',
+					data: null,
+					success: function (msg) {
+						console.log(msg);
+					}
+				});
 			}
 		});
+		setTimeout(function(){ updateBoard(); }, 1000);
 	}
 	// When player makes a move
 	$('body').delegate('#game td', 'click', function() {
@@ -78,24 +98,19 @@ $(document).ready(function() {
 			dataType: 'json',
 			data: {x: x, y: y, move: 'X'},
 			success: function(data) {
+				console.log("data: " + data);
 				if (data) {
 					computerMove();
+					updateBoard();
 					console.log("made move: " + data);
-					updateBoard();	
 				}
 			}
 		});	
+		updateBoard();
 		
 	});
 	$('body').delegate('#restart', 'click', function() {
-		$.ajax({
-			type: 'POST',
-			url: '/initBoard',
-			success: function() {
-				$('#results').html("Wating for results....");
-				updateBoard();	
-			}
-		});	
+		restartGame();
 	});
 
 
