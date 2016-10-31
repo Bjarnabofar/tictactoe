@@ -50,5 +50,5 @@ public class ComputerPlayerTest {
 			
 		assertEquals(check, true);
 	}
+	*/
 }
-*/
