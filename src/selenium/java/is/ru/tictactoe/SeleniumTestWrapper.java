@@ -17,7 +17,7 @@ public abstract class SeleniumTestWrapper {
     @BeforeClass
     public static void openBrowser(){
         
-        System.setProperty("webdriver.firefox.profile", "default");
+        System.setProperty("webdriver.gecko.driver", "/home/travis/build/Bjarnabofar/tictactoe/geckodriver");
         driver = new FirefoxDriver();
         //driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
