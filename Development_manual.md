@@ -2,6 +2,15 @@
 layout: default
 title: "Development manual for tictactoe"
 ---
+##T-303-HUGB Hugbúnaðarfræði  -  late term assignment##
+*Bjarnabofarnir</br>
+*Emil Hjaltason</br>
+*Hanna Ragnarsdóttir</br>
+*Haukur Halldórsson</br>
+*Hulda Lilja Hannesdóttir</br>
+*Magnús Þorsteinsson</br>
+*Þórhildur Þorleiksdóttir</br>
+
 ##Download gradle##
 To get version 3.1 running do the following commands.
 curl -s https://get.sdkman.io | bash

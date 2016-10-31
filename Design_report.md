@@ -4,13 +4,13 @@ title: "Design report for tictactoe"
 ---
 
 ##T-303-HUGB Hugbúnaðarfræði  -  late term assignment##
-*Bjarnabofarnir<br />
-*Emil Hjaltason<br />
-*Hanna Ragnarsdóttir<br />
-*Haukur Halldórsson<br />
-*Hulda Lilja Hannesdóttir<br />
-*Magnús Þorsteinsson<br />
-*Þórhildur Þorleiksdóttir<br />
+*Bjarnabofarnir</br>
+*Emil Hjaltason</br>
+*Hanna Ragnarsdóttir</br>
+*Haukur Halldórsson</br>
+*Hulda Lilja Hannesdóttir</br>
+*Magnús Þorsteinsson</br>
+*Þórhildur Þorleiksdóttir</br>
 
 ##The class diagram for tictactoe##
 To get a good overview and to make sure that all members would

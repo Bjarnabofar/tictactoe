@@ -2,6 +2,15 @@
 layout: default
 title: "Administration manual for tictactoe"
 ---
+##T-303-HUGB Hugbúnaðarfræði  -  late term assignment##
+*Bjarnabofarnir</br>
+*Emil Hjaltason</br>
+*Hanna Ragnarsdóttir</br>
+*Haukur Halldórsson</br>
+*Hulda Lilja Hannesdóttir</br>
+*Magnús Þorsteinsson</br>
+*Þórhildur Þorleiksdóttir</br>
+
 ##Run the game##
 Go to serene-falls-48635.herokuapp.com and start play the game!
 
