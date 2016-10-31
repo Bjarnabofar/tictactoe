@@ -32,7 +32,7 @@ deploy:
     production: tictactoe-production
 
 after_deploy:
-- ./gradlew seleniumXvfb 2>&1 | output.txt | mail -s "SeleniumReport" bjarnabofar@yahoo.com
+- ./gradlew seleniumXvfb
 
 #script:
 #- ./gradlew seleniumXvfb
