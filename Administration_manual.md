@@ -2,8 +2,6 @@
 layout: default
 title: "Administration manual for tictactoe"
 ---
-#Administration manual
-
 ##Run the game##
 Go to serene-falls-48635.herokuapp.com and start play the game!
 

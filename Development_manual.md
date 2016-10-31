@@ -2,8 +2,6 @@
 layout: default
 title: "Development manual for tictactoe"
 ---
-#Development manual
-
 ##Download gradle##
 To get version 3.1 running do the following commands.
 curl -s https://get.sdkman.io | bash
