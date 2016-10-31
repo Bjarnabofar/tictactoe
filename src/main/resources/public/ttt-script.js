@@ -12,6 +12,7 @@ $(document).ready(function() {
 	});*/
 
 	function restartGame() {
+		$('#game').css("color", "white");
 		$.ajax({
 			type: 'POST',
 			url: '/initBoard',
@@ -35,8 +36,8 @@ $(document).ready(function() {
 						else {
 							$("#results").html("AND THE WINNER IS.... " + winner + "!!!");
 						}
-						restartGame();
-  						
+						$('#game').css("color", "red");
+						setTimeout(function(){ restartGame(); }, 2000);
 					});
 				}
 			}
@@ -45,6 +46,7 @@ $(document).ready(function() {
 
 	// update board
 	function updateBoard() {
+		checkWinner();
 		$.ajax({
 			type: 'GET',
 			url: '/getBoard',
@@ -65,15 +67,21 @@ $(document).ready(function() {
 		});
 	}
 	function computerMove() {
-		$.ajax({
-			type: 'GET',
-			url: '/computerMove',
-			dataType: 'json',
-			data: null,
-			success: function (msg) {
-				console.log(msg);
+		$.get("/getWinner", function(winner) {
+			console.log("winner: " + winner);
+			if (winner == 'N') {
+				$.ajax({
+					type: 'GET',
+					url: '/computerMove',
+					dataType: 'json',
+					data: null,
+					success: function (msg) {
+						console.log(msg);
+					}
+				});
 			}
 		});
+		setTimeout(function(){ updateBoard(); }, 1000);
 	}
 	// When player makes a move
 	$('body').delegate('#game td', 'click', function() {
@@ -89,13 +97,15 @@ $(document).ready(function() {
 			dataType: 'json',
 			data: {x: x, y: y, move: 'X'},
 			success: function(data) {
+				console.log("data: " + data);
 				if (data) {
 					computerMove();
+					updateBoard();
 					console.log("made move: " + data);
-					updateBoard();	
 				}
 			}
 		});	
+		updateBoard();
 		
 	});
 	$('body').delegate('#restart', 'click', function() {
