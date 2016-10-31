@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	// get welcome message to confirm an established conneciton
+	restartGame();
 	updateBoard();
 
 	/*$.ajax({
@@ -101,7 +102,6 @@ $(document).ready(function() {
 				console.log("data: " + data);
 				if (data) {
 					computerMove();
-					updateBoard();
 					console.log("made move: " + data);
 				}
 			}

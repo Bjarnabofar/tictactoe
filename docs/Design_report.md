@@ -1,10 +1,8 @@
 ﻿---
-title: Design Report for tictactoe
+layout: default
+title: "Design Report for tictactoe"
 ---
-
-# Design Report for tictactoe
-
-##T-303-HUGB Hugbúnaðarfræði  -  late term assignment
+##Design Report for tictactoe
 Bjarnabofarnir<br />
 Emil Hjaltason<br />
 Hanna Ragnarsdóttir<br />
@@ -12,6 +10,9 @@ Haukur Halldórsson<br />
 Hulda Lilja Hannesdóttir<br />
 Magnús Þorsteinsson<br />
 Þórhildur Þorleiksdóttir<br />
+
+##Design description
+We use html and jQuery for the web app, and java for the buisness logic.
 
 ##The class diagram for tictactoe
 To get a good overview and to make sure that all members would
@@ -35,7 +36,7 @@ For example the cell[0][2] stands for the cell with x=0 and y=2(starts with 0).
 TicTacToe is the class that connects everything togehter. It makes the game start and keeps it running as long as needed.
 
 ##Coding rules
-All functions' start with lower case and every other word followed by a capital letter.
+All functions start with lower case and every other word followed by a capital letter.
 All variables use the same naming rule as functions.
 Classes start with capital letter and otherwise the same rule as functions.
 When brackets are needed we put the first one in the same line as the code(on the right) and the other bracket is
