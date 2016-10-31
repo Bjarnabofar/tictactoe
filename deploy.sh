@@ -25,7 +25,9 @@ TARGET_BRANCH="gh-pages"
 	      rm -rf out/build || exit 0
 	      #Add build directory to out
 	      cp -R build/ out/
-	      cp -R docs/ out/
+	      cp -R docs/Administration_manual.md out/
+	      cp -R docs/Development_manual.md out/
+	      cp -R docs/Design_report.md out/
 	      # Now let's go have some fun with the cloned repo
 	      cd out
 	      git config user.name "Travis CI"
