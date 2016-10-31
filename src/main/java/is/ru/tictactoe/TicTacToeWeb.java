@@ -42,10 +42,13 @@ public class TicTacToeWeb implements SparkApplication{
         get("/hasWinner", (req, res) -> ttt.hasWinner());
         get("/getWinner", (req, res) -> ttt.getWinner());
         get("/gameIsOver", (req, res) -> ttt.gameIsOver());
+
         post("/initBoard", (req, res) -> {
         	ttt.initBoard();
         	res.status(200);
         	return res;
     	});
+
+    	get("/getScore", (req, res) -> ttt.printScoreboard());
 	}
 }

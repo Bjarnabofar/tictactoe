@@ -10,7 +10,9 @@
 apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'jacoco'
-apply plugin: 'groovy'
+apply plugin: "com.github.kt3k.coveralls"
+
+
 
 mainClassName = "is.ru.tictactoe.TicTacToeWeb"
 
@@ -22,9 +24,23 @@ repositories {
 	mavenCentral()
 }
 
+buildscript {
+	repositories {
+		maven {
+			url "https://plugins.gradle.org/m2/"
+		}
+	}
+	dependencies {
+		classpath "org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.6.3"
+	}
+}
+
+
+
 //Selenium test
 sourceSets {
     selenium
+	seleniumXvfb
 }
 
 // JavaDoc
@@ -35,68 +51,70 @@ task myJavadocs(type: Javadoc) {
 //Jacoco is a code coverage plugin for java.
 jacoco {
     toolVersion = "0.7.6.201602180812"
-    reportsDir = file("$buildDir/customJacocoReportDir")
 }
 
 
-
+//jacoco setup
 jacocoTestReport{
     reports {
-		html.enabled true
-        xml.enabled true
+		html.enabled = true
+        xml.enabled = true
         csv.enabled false
-        html.destination "${buildDir}/reports/jacoco/html"
     }
+    //afterEvaluate {
+      //  classDirectories = files(classDirectories.files.collect {
+        //    fileTree(dir: it,
+          //          exclude: ['**/*TicTacToeWeb*.*'])
+        //})
+    //}
 }
+test.finalizedBy jacocoTestReport
 
 
-task applicationCodeCoverageReport(type:JacocoReport){
-    executionData run
-    sourceSets sourceSets.main
-}
-
-
+//further jacoco config and setup
 test {
     jacoco {
         append = false
-		destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
-		classDumpFile = file("$buildDir/jacoco/classpathdumps")
+        destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
+        classDumpFile = file("$buildDir/jacoco/classpathdumps")
     }
 }
 
+
+
+//task applicationCodeCoverageReport(type:JacocoReport){
+//    executionData run
+//    sourceSets sourceSets.main
+//}
+
+
+
+
 // In this section you declare the dependencies for your production and test code
 dependencies {
-    // The production code uses the SLF4J logging API at compile time
-    //compile 'org.slf4j:slf4j-api:1.7.21'
-
     // Declare the dependency for your favourite test framework you want to use in your tests.
     // TestNG is also supported by the Gradle Test task. Just change the
     // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.12'
     
-    compile 'com.sparkjava:spark-core:2.5'
-
-	
-    //compile 'com.sparkjava:sparl-template-jade:2.3'
-
+	compile 'com.sparkjava:spark-core:2.5'
     compile 'org.slf4j:slf4j-simple:1.7.9'
     compile 'com.google.code.gson:gson:2.7'
 
+	
     // Selenium dependencies
     seleniumCompile 'junit:junit:4.11'
-    seleniumCompile 'org.seleniumhq.selenium:selenium-firefox-driver:3.0.1'
-    seleniumCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.0.1'
 
-    compile "org.codehaus.groovy:groovy-all:2.2.2"
-    testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
+    seleniumCompile 'org.seleniumhq.selenium:selenium-java:2.48.2'
+    //seleniumCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.0.1'
 
-
+    seleniumXvfbCompile 'junit:junit:4.11'
+    seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-java:2.48.2'
+    //seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.0.1'
 }
 
-
 task stage {
-
     dependsOn installDist
 }
 
@@ -105,11 +123,22 @@ task selenium(type: Test, dependsOn: installDist) {
     classpath = sourceSets.selenium.runtimeClasspath
 }
 
+task seleniumXvfb(type: Test, dependsOn: installDist) {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+
+    environment "DISPLAY", ":99"
+
+    doFirst {
+        'bin/xvfb start'.execute()
+        'build/install/tictactoe/bin/tictactoe &'.execute()
+    }
+
+    doLast {
+        'sh -e /etc/init.d/xvfb stop'.execute()
+    }
+}
+
 run {
     standardInput = System.in
 }
-
-
-
-
-

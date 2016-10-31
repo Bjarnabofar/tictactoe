@@ -15,7 +15,7 @@ import java.util.Scanner;
  * It contains the business logic behind the game by
  * connecting all the other classes together.
  * It runs the game.
- * @author: Bjarnabofarnir
+ * @author Bjarnabofarnir
  */
 
 public class TicTacToe
@@ -27,8 +27,10 @@ public class TicTacToe
 	private Board board;
 	private char lastTurn;
 
+
 	/**
-	* @return: the 1d form of the given tile
+	* @param p, to be able to find the correct location on the Board
+	* @return the 1d form of the given tile
 	*/
 	public int xyTo1d(Point p) {
 		int size = board.getSize();
@@ -40,12 +42,19 @@ public class TicTacToe
 	}
 	/**
      * Welcomes the user to the game!
+     * @return welcome, which is the welcome message.
      */
 	public static String welcome() {
 		String welcome = "Welcome to TicTacToe!";
 		return welcome;
 	}
 
+	/**
+	 * @param x coordiantes of Point p
+	 * @param y coordinates of Point p
+	 * @param move, to update the board
+	 * @return true/false depending on the status on the Board
+	 */
 	public boolean updateBoard(int x, int y, char move) {
 		if (board.isAvailable(x, y)){
 			board.updateBoard(x, y, move);
@@ -62,10 +71,11 @@ public class TicTacToe
 		human = new HumanPlayer();
 		computer = new ComputerPlayer();
 		board = new Board();
+
 	}
 
 	/**
-     * @return: the variable numberOfGames, that keeps track of games played.
+     * @return numberOfGames, that keeps track of games played.
      */
 	public int getNumberOfGames(){
 		return numberOfGames;
@@ -78,20 +88,22 @@ public class TicTacToe
 	}
 
 	/**
-     * @return: true if the game is over, false otherwise.
+     * @return true/false if the game is over, false otherwise.
      */
 	public boolean gameIsOver() {
-		if(board.hasWinner() || board.isDraw())
+		if(board.hasWinner() || board.isDraw()) {
+			board.getWinner();
 			return true;
+		}
 		else
 			return false;
 	}
 	/**
      * Prints out the scoreboard, i.e. human player wins, computer player wins and ties.
      */
-	private void printScoreboard() {
-		int ties = getNumberOfGames()- human.getWins()- computer.getWins();
-		System.out.println("The score is: --- You: " + human.getWins() + " --- Computer: " + computer.getWins() + " --- Ties: " + ties);
+	public String printScoreboard() {
+		int ties = getNumberOfGames() - human.getWins() - computer.getWins();
+		return "The score is: --- You: " + human.getWins() + " --- Computer: " + computer.getWins() + " --- Ties: " + ties;
 	}
 
 	/**
@@ -117,7 +129,10 @@ public class TicTacToe
 			board.updateBoard(pointComputer, computer.getSign());
 		}
 	}
-
+	/**
+     * Plays a move to the computer player
+     * @return The point where the computer wants to place their X or O
+ 	 */
 	public Point computerMove() {
 		Point pointComputer;
 		do {
@@ -126,18 +141,22 @@ public class TicTacToe
 		board.updateBoard(pointComputer, computer.getSign());
 		return pointComputer;
 	}
-	/**
-     * Playes one whole round of tictactoe. One round is classified as one game of TicTacToe.
-     */
 
+	/**
+     * @return true/false to see if the game has a winner or not
+	 */
 	public boolean hasWinner() {
 		return board.hasWinner();
 	}
-
+	/**
+     * @return The winner of the game
+	 */
 	public char getWinner() {
 		return board.getWinner();
 	}
-
+	/**
+     * Playes one whole round of tictactoe. One round is classified as one game of TicTacToe.
+     */
 	private void oneRound() {
 		do {
 			oneTurn();
@@ -160,12 +179,14 @@ public class TicTacToe
 		printScoreboard();
 	}
 	/**
-     * @return: the game board
+     * @return board which is the game board
      */
 	public Board getBoard() {
 		return board;
 	}
-
+	/**
+     * Playes a game of tictactoe.
+     */
 	public void playGame() {
 		Scanner sc = new Scanner(System.in);
 		int answer = 1;
@@ -178,7 +199,10 @@ public class TicTacToe
 
 		} while(answer == 1);
 	}
-
+	/**
+     * main function to play the game
+     * @param args ,the arguments to put into play
+     */
 	public static void main(String[] args){
 		TicTacToe tictactoe = new TicTacToe();
 		tictactoe.playGame();
