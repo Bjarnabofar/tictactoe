@@ -1,5 +1,5 @@
 ﻿---
-layout: post
+layout: default
 title: "Design Report for tictactoe"
 date: 2016-10-30
 ---

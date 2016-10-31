@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Development manual for tictactoe"
 date: 2016-10-30
 ---
