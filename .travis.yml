@@ -22,7 +22,7 @@ script:
 
 after_success:
 - ./gradlew jacocoTestReport coveralls
-- ./gradlew seleniumXvfb
+#- ./gradlew seleniumXvfb
 
 deploy:
   provider: heroku
