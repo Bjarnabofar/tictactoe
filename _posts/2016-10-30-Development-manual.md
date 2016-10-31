@@ -27,16 +27,22 @@ Make an account at Heroku
 Download appropriate Heroku version:
 https://devcenter.heroku.com/articles/heroku-command-line#download-and-install
 login with heroku (not supported with Git Bash, use local command line):
+~~~~~~~~
 heroku login
+~~~~~~~~
 
 ##Get Chrome Driver##
 Download chromedriver.exe and add to Path
 
 ##Build##
 When changes are made build can me done by typing
+~~~~~~~~
 gradle build
+~~~~~~~~
 And checking by
+~~~~~~~~
 gradle check
+~~~~~~~~
 
 ##Push changes##
 To push changes sign in with the account
