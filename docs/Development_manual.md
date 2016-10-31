@@ -32,6 +32,7 @@ Download geckodriver and add to path
 
 ##Build
 When changes are made build can be done by typing gradle build
+https://bjarnabofar.github.io/tictactoe/  see latest tests.
 
 ##Run locally
 Type gradle run to run the program locally, and see the app at http://localhost:4567
