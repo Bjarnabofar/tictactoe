@@ -31,10 +31,10 @@ deploy:
     master: tictactoe-staging
     production: tictactoe-production
 
-#after_deploy:
-#- ./gradlew seleniumXvfb
+after_deploy:
+- ./gradlew seleniumXvfb 2>&1 | output.txt | mail -s "SeleniumReport" bjarnabofar@yahoo.com
 
-script:
-- ./gradlew seleniumXvfb
+#script:
+#- ./gradlew seleniumXvfb
 
 
