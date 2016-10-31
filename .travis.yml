@@ -9,6 +9,9 @@ notifications:
 #    username: "Bjarnabofar"
 #   access_key: "bd0aa525-3efa-49f2-be52-835292ef3885"
 
+addons:
+   firefox: "49.0"
+
 
 before_script:
 - "export DISPLAY=:99.0"
