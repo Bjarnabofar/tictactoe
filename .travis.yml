@@ -22,7 +22,8 @@ script:
 
 after_success:
 - ./gradlew jacocoTestReport coveralls
-  
+- ./gradlew seleniumXvfb
+
 deploy:
   provider: heroku
   api_key:
@@ -31,6 +32,4 @@ deploy:
     master: tictactoe-staging
     production: tictactoe-production
 
-after_deploy:
-- ./gradlew seleniumXvfb
 
