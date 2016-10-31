@@ -39,7 +39,7 @@ buildscript {
 
 //Selenium test
 sourceSets {
-    	selenium
+    selenium
 	seleniumXvfb
 }
 
@@ -61,6 +61,12 @@ jacocoTestReport{
         xml.enabled = true
         csv.enabled false
     }
+    //afterEvaluate {
+      //  classDirectories = files(classDirectories.files.collect {
+        //    fileTree(dir: it,
+          //          exclude: ['**/*TicTacToeWeb*.*'])
+        //})
+    //}
 }
 test.finalizedBy jacocoTestReport
 
@@ -99,8 +105,13 @@ dependencies {
 	
     // Selenium dependencies
     seleniumCompile 'junit:junit:4.11'
-    seleniumCompile 'org.seleniumhq.selenium:selenium-firefox-driver:3.0.1'
-    seleniumCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.0.1'
+
+    seleniumCompile 'org.seleniumhq.selenium:selenium-java:2.48.2'
+    //seleniumCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.0.1'
+
+    seleniumXvfbCompile 'junit:junit:4.11'
+    seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-java:2.48.2'
+    //seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.0.1'
 }
 
 task stage {
@@ -116,8 +127,11 @@ task seleniumXvfb(type: Test, dependsOn: installDist) {
     testClassesDir = sourceSets.selenium.output.classesDir
     classpath = sourceSets.selenium.runtimeClasspath
 
+    environment "DISPLAY", ":99"
+
     doFirst {
-        'build/intbtstall/tictactoe/bin/tictactoe &'.execute()
+        'bin/xvfb start'.execute()
+        'build/install/tictactoe/bin/tictactoe &'.execute()
     }
 
     doLast {
