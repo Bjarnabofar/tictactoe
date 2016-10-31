@@ -32,7 +32,4 @@ public class Cell {
 		sign = m;
 	}
 
-	public void main(String[] args){
-		
-	}
 }
