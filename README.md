@@ -2,4 +2,5 @@
 [![Coverage Status](https://coveralls.io/repos/github/Bjarnabofar/tictactoe/badge.svg)](https://coveralls.io/github/Bjarnabofar/tictactoe)
 # TicTacToe
 ##License
-Copyright 2016 Bjarnabófarnir - Emil Hjaltason, Hanna Ragnarsdóttir, Haukaur Halldórsson, Hulda Lilja Hannesdóttir, Magnús Þorsteinsson, Þórhildur Þorleiksdóttir
+Copyright 2016 Bjarnabófarnir 
+- Emil Hjaltason, Hanna Ragnarsdóttir, Haukaur Halldórsson, Hulda Lilja Hannesdóttir, Magnús Þorsteinsson, Þórhildur Þorleiksdóttir
