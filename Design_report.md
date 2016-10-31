@@ -2,7 +2,6 @@
 layout: default
 title: "Design report for tictactoe"
 ---
-
 ##T-303-HUGB Hugbúnaðarfræði  -  late term assignment##
 *Bjarnabofarnir</br>
 *Emil Hjaltason</br>
