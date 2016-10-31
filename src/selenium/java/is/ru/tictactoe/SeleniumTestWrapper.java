@@ -5,7 +5,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.firefox.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.*;
+import org.openqa.selenium.WebDriver;
 
 
 public abstract class SeleniumTestWrapper {
