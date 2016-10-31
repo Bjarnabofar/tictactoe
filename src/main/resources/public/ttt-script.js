@@ -13,6 +13,7 @@ $(document).ready(function() {
 
 	function restartGame() {
 		$('#game').css("color", "white");
+		$("#results").html("Waiting for results...");
 		$.ajax({
 			type: 'POST',
 			url: '/initBoard',
