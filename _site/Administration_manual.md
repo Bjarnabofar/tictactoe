@@ -1,5 +1,5 @@
 ﻿---
-layout: default
+layout: admin
 title: "Administration manual for tictactoe"
 ---
 ## T-303-HUGB Hugbúnaðarfræði  -  late term assignment ######
