@@ -9,32 +9,6 @@ import is.ru.tictactoe.ComputerPlayer;
 
 public class ComputerPlayerTest {
 
-	public class StubNotRandom extends Random{
-        int sequentialNum = 0;
-
-        public StubNotRandom(){
-            super();
-        }
-
-        public int nextInt(){
-            return sequentialNum++;
-        }
-    }
-	
-	public class StubCpPlayer extends ComputerPlayer {
-		public Point getMove() {
-			StubNotRandom rn = new StubNotRandom();
-			
-			int x = rn.nextInt();
-			int y = rn.nextInt();
-		
-			Point p = new Point(x, y);
-			return p;
-		}
-	}
-	
-	
-
 	@Test
 	public void testGetSing(){
 		Player p = new ComputerPlayer();
@@ -42,25 +16,38 @@ public class ComputerPlayerTest {
 	}
 	
 
-	@Test
-	public void testRandomPointX() {
-		Player cp = new StubCpPlayer();
-		Point p = cp.getMove();
-		
-		int xValue = 0;
-		
-		assertEquals(xValue, p.getX());
-		
-	}
 
 	@Test
-	public void testRandomPointy() {
-		Player cp = new StubCpPlayer();
+	public void testRandomPointY() {
+		Player cp = new ComputerPlayer();
 		Point p = cp.getMove();
 		
-		int yValue = 1;
+		int low = 0;
+		int high = 3;
+		boolean check = false;
+
+		if(p.getY() < 3 && p.getY() > 0) {
+			check = true;
+		}
+			
+		assertEquals(check, true);		
+	}
+
+
+
+	@Test
+	public void testRandomPointX() {
+		Player cp = new ComputerPlayer();
+		Point p = cp.getMove();	
 		
-		assertEquals(yValue, p.getY());
-		
+		int low = 0;
+		int high = 3;
+		boolean check = false;
+
+		if(p.getX() < 3 && p.getX() > 0) {
+			check = true;
+		}
+			
+		assertEquals(check, true);
 	}
 }
