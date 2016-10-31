@@ -2,25 +2,29 @@
 layout: admin
 title: "Administration manual for tictactoe"
 ---
-## T-303-HUGB Hugbúnaðarfræði  -  late term assignment ######
-</br>
-Bjarnabofarnir</br>
-Emil Hjaltason</br>
-Hanna Ragnarsdóttir</br>
-Haukur Halldórsson</br>
-Hulda Lilja Hannesdóttir</br>
-Magnús Þorsteinsson</br>
-Þórhildur Þorleiksdóttir</br>
+##Administration manual for tictactoe##
+*Bjarnabofarnir</br>
+*Emil Hjaltason</br>
+*Hanna Ragnarsdóttir</br>
+*Haukur Halldórsson</br>
+*Hulda Lilja Hannesdóttir</br>
+*Magnús Þorsteinsson</br>
+*Þórhildur Þorleiksdóttir</br>
 
-## Run the game ######
-</br>
-Go to serene-falls-48635.herokuapp.com and start play the game! </br>
+##See the staging app and selenium test results##
+Go to tictactoe-staging.herokuapp.com to see the newest version in progress.
+When it is on staging it has passed all unit tests, but not neccesarly all 
+end-to-end tests (selenium tests).
 
-## Uptade the game ######
-</br>
-Here we need to write about how to see on Travis that selenium tests were</break>
-accepted and then this version can be pushed to the branch Production.
+##See the results of end-to-end tests##
+Go to https://travis-ci.org/Bjarnabofar/tictactoe/ and check the newest job log.
+At the bottom you can see a button / tag "after_deploy".
+Click on it to see the results of the selenium tests.
+If all selenium tests passed, it says "build successfull", otherwise it says what 
+selenium test failed.
 
-## Follow new updates ######
-</br>
-You can see how things are going at https://twitter.com/bjarnabofar
+##Making the app live##
+When the app is ready for production, after all selenium tests have passed, a pull
+request must be made to merge master branch to production branch. 
+When the pull request is accepted, the app goes live. The website for the production app
+is tictactoe-production.herokuapp.com. 
