@@ -18,9 +18,6 @@ before_install:
 - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
 
 script:
-- ./gradlew clean
-- ./gradlew check
-- ./gradlew build
 - ./gradlew seleniumXvfb
 
 after_success:
@@ -33,5 +30,7 @@ deploy:
   app:
     master: tictactoe-staging
     production: tictactoe-production
+after_deploy:
+- ./gradlew seleniumXvfb
 
 
