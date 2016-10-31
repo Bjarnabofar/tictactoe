@@ -27,6 +27,7 @@ public class TicTacToe
 	private Board board;
 	private char lastTurn;
 
+
 	/**
 	* @param p, to be able to find the correct location on the Board
 	* @return the 1d form of the given tile
@@ -70,6 +71,7 @@ public class TicTacToe
 		human = new HumanPlayer();
 		computer = new ComputerPlayer();
 		board = new Board();
+
 	}
 
 	/**
@@ -89,17 +91,19 @@ public class TicTacToe
      * @return true/false if the game is over, false otherwise.
      */
 	public boolean gameIsOver() {
-		if(board.hasWinner() || board.isDraw())
+		if(board.hasWinner() || board.isDraw()) {
+			board.getWinner();
 			return true;
+		}
 		else
 			return false;
 	}
 	/**
      * Prints out the scoreboard, i.e. human player wins, computer player wins and ties.
      */
-	private void printScoreboard() {
-		int ties = getNumberOfGames()- human.getWins()- computer.getWins();
-		System.out.println("The score is: --- You: " + human.getWins() + " --- Computer: " + computer.getWins() + " --- Ties: " + ties);
+	public String printScoreboard() {
+		int ties = getNumberOfGames() - human.getWins() - computer.getWins();
+		return "The score is: --- You: " + human.getWins() + " --- Computer: " + computer.getWins() + " --- Ties: " + ties;
 	}
 
 	/**

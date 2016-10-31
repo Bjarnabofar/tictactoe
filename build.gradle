@@ -105,6 +105,7 @@ dependencies {
 	
     // Selenium dependencies
     seleniumCompile 'junit:junit:4.11'
+
     seleniumCompile 'org.seleniumhq.selenium:selenium-java:2.48.2'
     //seleniumCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.0.1'
 
