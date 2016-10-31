@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="is.ru.tictactoe.PlayerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-10-31T16:12:01" hostname="Emils-MacBook-Pro.local" time="0.002">
+  <properties/>
+  <testcase name="testGetDraws" classname="is.ru.tictactoe.PlayerTest" time="0.001"/>
+  <testcase name="testAddDraw" classname="is.ru.tictactoe.PlayerTest" time="0.0"/>
+  <testcase name="testAddWins" classname="is.ru.tictactoe.PlayerTest" time="0.0"/>
+  <testcase name="testGetSing" classname="is.ru.tictactoe.PlayerTest" time="0.0"/>
+  <testcase name="testGetWins" classname="is.ru.tictactoe.PlayerTest" time="0.0"/>
+  <testcase name="testAddLosses" classname="is.ru.tictactoe.PlayerTest" time="0.0"/>
+  <testcase name="testGetLosses" classname="is.ru.tictactoe.PlayerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Point.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tictactoe</a> &gt; <a href="index.source.html" class="el_package">is.ru.tictactoe</a> &gt; <span class="el_source">Point.java</span></div><h1>Point.java</h1><pre class="source lang-java linenums">package is.ru.tictactoe;
+
+/**
+ * The Point class contains information about the position
+ * of X and Y for the board
+ * @author Bjarnabofarnir
+ */
+public class Point {
+
+	private int x;
+	private int y;
+	
+	/**
+     * default constructor
+     */
+<span class="fc" id="L16">	public Point(){</span>
+<span class="fc" id="L17">		x = 0;</span>
+<span class="fc" id="L18">		y = 0;</span>
+<span class="fc" id="L19">	}</span>
+
+	/**
+     * Constructor for new point
+     * @param x is for the x value
+     * @param y is for the y value
+     */
+<span class="fc" id="L26">	public Point(int x, int y){</span>
+<span class="fc" id="L27">		this.x = x;</span>
+<span class="fc" id="L28">		this.y = y;</span>
+<span class="fc" id="L29">	}</span>
+
+	/**
+     * @return the value of x
+     */	
+	public int getX(){
+<span class="fc" id="L35">		return x;</span>
+	}
+	
+	/**
+     * @return the value of y
+     */	
+	public int getY(){
+<span class="fc" id="L42">		return y;</span>
+	}
+	
+	/**
+     * Constructor for new point
+     * @param xx is new value for x
+     */
+	public void setX(int xx){
+<span class="fc" id="L50">		x = xx;</span>
+<span class="fc" id="L51">	}</span>
+	
+	/**
+     * Constructor for new point
+     * @param yy is new value for y
+     */
+	public void setY(int yy){
+<span class="fc" id="L58">		y = yy;</span>
+<span class="fc" id="L59">	}</span>
+
+	/**
+     * @return point of (x, y) coordinates
+     */
+	public Point getPoint(){
+<span class="nc" id="L65">		Point point = new Point(x, y);</span>
+<span class="nc" id="L66">		return point;</span>
+	}
+
+}
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
