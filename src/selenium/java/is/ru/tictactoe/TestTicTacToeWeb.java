@@ -24,7 +24,7 @@ public class TestTicTacToeWeb extends SeleniumTestWrapper {
 		//driver.findElement(By.id("restart")).click();
     }
 
-    /*@Test
+    @Test
     public void intitialMessageMatches() throws  InterruptedException {
         Thread.sleep(1000);
         driver.get(baseUrl);
@@ -45,7 +45,7 @@ public class TestTicTacToeWeb extends SeleniumTestWrapper {
 
         if(count == 9){
         	//Thread.sleep(3000);
-        	assertEquals("Waiting for some results...", driver.findElement(By.id("results")).getText());
+        	assertEquals("Waiting for some results...prump", driver.findElement(By.id("results")).getText());
         }
     }
 
