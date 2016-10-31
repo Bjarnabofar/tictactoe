@@ -32,6 +32,6 @@ deploy:
     production: tictactoe-production
 
 after_deploy:
-- echo ./gradlew seleniumXvfb --info 
+- ./gradlew seleniumXvfb --info 
 
 
