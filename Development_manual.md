@@ -6,7 +6,7 @@ date: 2016-10-30
 
 # Development manual for tictactoe
 
-##Download gradle
+##Download gradle##
 To get version 3.1 running do the following commands.
 curl -s https://get.sdkman.io | bash
 source "~/.sdkman/bin/sdkman-init.sh"

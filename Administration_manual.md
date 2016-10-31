@@ -10,8 +10,8 @@ date: 2016-10-30
 Go to serene-falls-48635.herokuapp.com and start play the game!
 
 ##Uptade the game##
-Since we have continuous integration all you need to do is </break>
-refresh the server and if there has been update that new version will run.
+Here we need to write about how to see on Travis that selenium tests were</break>
+accepted and then this version can be pushed to the branch Production.
 
 ##Follow new updates##
 You can see how things are going at https://twitter.com/bjarnabofar
