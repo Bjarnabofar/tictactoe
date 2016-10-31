@@ -9,23 +9,28 @@ notifications:
 #    username: "Bjarnabofar"
 #   access_key: "bd0aa525-3efa-49f2-be52-835292ef3885"
 
-addons:
-   firefox: "49.0"
+#addons:
+   #firefox: "49.0"
 
 
 before_script:
+- "wget https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz"
+- "tar xvfs geckodriver-v0.11.1-linux64.tar.gz"
+- "pwd"
+- "ls"
+- "chmod 777 bin/xvfb"
 - "export DISPLAY=:99.0"
 - "sh -e /etc/init.d/xvfb start"
-- sleep 3 # give xvfb some time to start
-
-
+- sleep 3
 
 before_install:
-- chmod +x bin/xvfb
+#- chmod +x bin/xvfb
 - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
 
 script:
+- ./gradlew clean  
 - ./gradlew check
+- ./gradlew build
 - ./gradlew seleniumXvfb
 
 after_success:
