@@ -1,6 +1,6 @@
 ﻿---
 layout: default
-title: "Design report"
+title: "Design report for tictactoe"
 ---
 
 ##T-303-HUGB Hugbúnaðarfræði  -  late term assignment##
