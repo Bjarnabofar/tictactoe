@@ -1,10 +1,7 @@
 ---
 layout: default
 title: "Development manual for tictactoe"
-date: 2016-10-30
 ---
-
-# Development manual for tictactoe
 
 ##Download gradle##
 To get version 3.1 running do the following commands.

@@ -7,9 +7,8 @@ date: 2016-10-30
   <h1>Hi, there this is the Bjarnabófar tictactoe website!</h1>
   <p>Please take a look at all the documentations!</p>
   <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> » <a href="/tictactoe{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-    {% endfor %}
-    <li><a href="/tictactoe/Administration_manual" title="Testing">Testing</a></li>
+    <li><a href="/tictactoe/Administration_manual" title="Administration manual">Administration manual</a></li>
+    <li><a href="/tictactoe/Development_manual" title="Development manual">Development manual</a></li>
+    <li><a href="/tictactoe/Design_report" title="Testing">Design Report</a></li>
   </ul>
 </div><!-- /.blurb -->

@@ -1,10 +1,7 @@
 ﻿---
 layout: default
 title: "Design Report for tictactoe"
-date: 2016-10-30
 ---
-
-# Design Report for tictactoe
 
 ##T-303-HUGB Hugbúnaðarfræði  -  late term assignment##
 *Bjarnabofarnir<br />
