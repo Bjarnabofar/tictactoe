@@ -2,7 +2,7 @@
 layout: default
 title: "Administration manual for tictactoe"
 ---
-##T-303-HUGB Hugbúnaðarfræði  -  late term assignment##
+##Administration manual for tictactoe##
 *Bjarnabofarnir</br>
 *Emil Hjaltason</br>
 *Hanna Ragnarsdóttir</br>

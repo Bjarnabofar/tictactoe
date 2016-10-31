@@ -1,7 +1,7 @@
 ---
-title: Development manual for tictactoe
+layout: default
+title: "Development manual for tictactoe"
 ---
-
 # Development manual for tictactoe
 
 ##Download gradle
@@ -27,16 +27,20 @@ https://devcenter.heroku.com/articles/heroku-command-line#download-and-install
 login with heroku (not supported with Git Bash, use local command line):
 heroku login
 
-##Get Chrome Driver
-Download chromedriver.exe and add to Path
+##Get geckodriver
+Download geckodriver and add to path
 
 ##Build
-When changes are made build can me done by typing
-gradle build
-And checking by
-gradle check
+When changes are made build can be done by typing gradle build
+
+##Run locally
+Type gradle run to run the program locally, and see the app at http://localhost:4567
 
 ##Push changes
 To push changes sign in with the account
 email: bjarnabofar@yahoo.com
 password: hugbunadarfraedi
+
+##Run Selenium tests locally
+Make sure you have downloaded geckodriver.
+Type ./gradlew selenium to run the selenium tests locally
