@@ -12,7 +12,6 @@
 hs_err_pid*
 
 # Test results / build folder
-build/*
 
 # Gradle
 *.bin
