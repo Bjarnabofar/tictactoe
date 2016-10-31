@@ -21,3 +21,4 @@ build/*
 
 # Live documentation
 #_site/
+!*.html
