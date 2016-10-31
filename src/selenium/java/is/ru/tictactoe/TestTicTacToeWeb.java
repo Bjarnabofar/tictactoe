@@ -43,10 +43,10 @@ public class TestTicTacToeWeb extends SeleniumTestWrapper {
         	}
         }
 
-        if(count == 9){
+        //if(count == 9){
         	//Thread.sleep(3000);
         	assertEquals("Waiting for some results...prump", driver.findElement(By.id("results")).getText());
-        }
+        //}
     }
 
     /*@Test
