@@ -23,7 +23,7 @@ public class TestTicTacToeWeb extends SeleniumTestWrapper {
 		assertEquals("X", inputXIn11.getText());
 		//driver.findElement(By.id("restart")).click();
     }
-
+/*
     @Test
     public void intitialMessageMatches() throws  InterruptedException {
         Thread.sleep(1000);
