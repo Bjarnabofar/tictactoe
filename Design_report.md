@@ -16,7 +16,6 @@ To get a good overview and to make sure that all members would
 agree on the initial design we made a class diagram which can
 be seen below.
 This is the inital design and will likely change in the process.
-[![klasarit_tictactoe.jpg](https://s22.postimg.org/l8olrxc81/klasarit_tictactoe.jpg)](https://postimg.org/image/3vebd2gwt/)
 Clearifications:</br>
 HumanPlayer and Computer inherit from Player since they have a lot in common. The only difference is how getMove() is generated to
 return a Point that represented the cell chosen for a round. Therefore getMoce() has to be implimented in both those classes but
