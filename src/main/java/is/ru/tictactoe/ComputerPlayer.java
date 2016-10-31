@@ -1,5 +1,5 @@
 package is.ru.tictactoe;
-import java.util.random;
+import java.util.Random;
 
     /**
      * ComputerPlayer class inherits from Player class, to get 

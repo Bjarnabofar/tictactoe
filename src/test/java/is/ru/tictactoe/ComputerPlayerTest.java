@@ -2,6 +2,7 @@ package is.ru.tictactoe;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
+import java.util.Random;
 import is.ru.tictactoe.Point;
 import is.ru.tictactoe.ComputerPlayer;
 
@@ -20,12 +21,12 @@ public class ComputerPlayerTest {
         }
     }
 	
-	public class StubCpPlayer extends Player {
-		public StubCpPlayer getMove() {
+	public class StubCpPlayer extends ComputerPlayer {
+		public Point getMove() {
 			StubNotRandom rn = new StubNotRandom();
 			
-			int x = rn.nextint();
-			int y = rn.nextint();
+			int x = rn.nextInt();
+			int y = rn.nextInt();
 		
 			Point p = new Point(x, y);
 			return p;
