@@ -7,10 +7,8 @@ date: 2016-10-30
   <h1>Hi, there this is the Bjarnabófar tictactoe website!</h1>
   <p>Please take a look at all the documentations!</p>
   <ul class="posts">
-
     {% for post in site.posts %}
       <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
     {% endfor %}
-    <li><a href="test">The test html</a><li>
   </ul>
 </div><!-- /.blurb -->
