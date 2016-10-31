@@ -1,6 +1,6 @@
 ﻿---
 layout: default
-title: Design Report for tictactoe
+title: "Design Report for tictactoe"
 ---
 
 # Design Report for tictactoe

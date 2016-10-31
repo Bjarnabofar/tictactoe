@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Development manual for tictactoe
+title: "Development manual for tictactoe"
 ---
 # Development manual for tictactoe
 
