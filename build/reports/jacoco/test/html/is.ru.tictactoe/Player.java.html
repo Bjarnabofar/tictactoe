@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Player.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tictactoe</a> &gt; <a href="index.source.html" class="el_package">is.ru.tictactoe</a> &gt; <span class="el_source">Player.java</span></div><h1>Player.java</h1><pre class="source lang-java linenums">package is.ru.tictactoe;
+
+/**
+ * Player class contains info of wins, losses and draws 
+ * for a Player of the game Tic Tac Toe.
+ * @author Bjarnabofarnir
+ */
+<span class="fc" id="L8">public abstract class Player {</span>
+	protected char sign;
+	protected int wins;
+	protected int losses;
+	protected int draws;
+
+	/**
+     *@return wins which holds track of number of wins for this player
+     */
+	public int getWins() {
+<span class="fc" id="L18">		return wins;</span>
+	}
+
+	/**
+     *@return losses which holds track of number of losses for this player
+     */
+	public int getLosses() {
+<span class="fc" id="L25">		return losses;</span>
+	}
+
+	/**
+     *@return draws which holds track of number of draws for this player
+     */
+	public int getDraws() {
+<span class="fc" id="L32">		return draws;</span>
+	}
+
+	/**
+     *@return sign which says if the player's sign is X or Y
+     */
+	public char getSign() {
+<span class="fc" id="L39">		return sign;</span>
+	}
+
+	/**
+     * Increment number of wins by one
+     */
+	public void addWin() {
+<span class="fc" id="L46">		wins++;</span>
+<span class="fc" id="L47">	}</span>
+	/**
+     * Decrements number of losses by one
+     */
+	public void addLoss() {
+<span class="fc" id="L52">		losses++;</span>
+<span class="fc" id="L53">	}</span>
+
+	/**
+     * Increments number of draws by one
+     */
+	public void addDraw() {
+<span class="fc" id="L59">		draws++;</span>
+<span class="fc" id="L60">	}</span>
+
+	/**
+     * Gets the player's next move, implemented differently for computer player vs human player
+     * @return the Point instance of the next move
+     */
+	protected abstract Point getMove();
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

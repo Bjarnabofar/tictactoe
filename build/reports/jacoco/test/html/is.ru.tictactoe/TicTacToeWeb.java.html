@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>TicTacToeWeb.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tictactoe</a> &gt; <a href="index.source.html" class="el_package">is.ru.tictactoe</a> &gt; <span class="el_source">TicTacToeWeb.java</span></div><h1>TicTacToeWeb.java</h1><pre class="source lang-java linenums">package is.ru.tictactoe;
+
+import static spark.Spark.*;
+import spark.*;
+import spark.servlet.SparkApplication;
+import java.util.HashMap;
+import java.util.Map;
+import com.google.gson.Gson;
+
+<span class="nc" id="L10">public class TicTacToeWeb implements SparkApplication{</span>
+
+	public static void main(String[] args) {
+<span class="nc" id="L13">		staticFiles.location(&quot;/public&quot;);</span>
+		
+<span class="nc" id="L15">		SparkApplication tttWeb = new TicTacToeWeb();</span>
+		//get(&quot;/&quot;, (req, res) -&gt; ttt.welcome());
+<span class="nc" id="L17">		String port = System.getenv(&quot;PORT&quot;);</span>
+<span class="nc bnc" id="L18" title="All 2 branches missed.">		        if (port != null) {</span>
+<span class="nc" id="L19">				port(Integer.valueOf(port));</span>
+			}
+<span class="nc" id="L21">		    tttWeb.init();</span>
+<span class="nc" id="L22">	}</span>
+
+	@Override
+    public void init() {
+<span class="nc" id="L26">    	final TicTacToe ttt = new TicTacToe();</span>
+<span class="nc" id="L27">    	Gson gson = new Gson();</span>
+<span class="nc" id="L28">	    get(&quot;/welcome&quot;, (req, res) -&gt; ttt.welcome());</span>
+<span class="nc" id="L29">	    get(&quot;/getBoard&quot;, (req, res) -&gt; ttt.getBoard(), gson::toJson);</span>
+
+<span class="nc" id="L31">	    post(&quot;/humanMove&quot;, (req, res) -&gt; {</span>
+<span class="nc" id="L32">            boolean test = ttt.updateBoard(</span>
+<span class="nc" id="L33">                Integer.parseInt(req.queryParams(&quot;x&quot;)),</span>
+<span class="nc" id="L34">                Integer.parseInt(req.queryParams(&quot;y&quot;)),</span>
+<span class="nc" id="L35">                req.queryParams(&quot;move&quot;).charAt(0)</span>
+            );          
+<span class="nc" id="L37">            res.status(200);</span>
+<span class="nc" id="L38">            return test;</span>
+        });
+
+<span class="nc" id="L41">        get(&quot;/computerMove&quot;, (req, res) -&gt; ttt.computerMove());</span>
+<span class="nc" id="L42">        get(&quot;/hasWinner&quot;, (req, res) -&gt; ttt.hasWinner());</span>
+<span class="nc" id="L43">        get(&quot;/getWinner&quot;, (req, res) -&gt; ttt.getWinner());</span>
+<span class="nc" id="L44">        get(&quot;/gameIsOver&quot;, (req, res) -&gt; ttt.gameIsOver());</span>
+
+<span class="nc" id="L46">        post(&quot;/initBoard&quot;, (req, res) -&gt; {</span>
+<span class="nc" id="L47">        	ttt.initBoard();</span>
+<span class="nc" id="L48">        	res.status(200);</span>
+<span class="nc" id="L49">        	return res;</span>
+    	});
+
+<span class="nc" id="L52">    	get(&quot;/getScore&quot;, (req, res) -&gt; ttt.printScoreboard());</span>
+<span class="nc" id="L53">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

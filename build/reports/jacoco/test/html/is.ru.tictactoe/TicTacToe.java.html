@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>TicTacToe.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tictactoe</a> &gt; <a href="index.source.html" class="el_package">is.ru.tictactoe</a> &gt; <span class="el_source">TicTacToe.java</span></div><h1>TicTacToe.java</h1><pre class="source lang-java linenums">package is.ru.tictactoe;
+import is.ru.tictactoe.Point;
+import is.ru.tictactoe.Board;
+import is.ru.tictactoe.Player;
+import is.ru.tictactoe.HumanPlayer;
+import is.ru.tictactoe.ComputerPlayer;
+import java.io.IOException;
+import java.util.*;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.util.Scanner;
+
+/**
+ * The TicTacToe class is the brain of the application.
+ * It contains the business logic behind the game by
+ * connecting all the other classes together.
+ * It runs the game.
+ * @author Bjarnabofarnir
+ */
+
+public class TicTacToe
+{
+
+	private int numberOfGames;
+	private HumanPlayer human;
+	private ComputerPlayer computer;
+	private Board board;
+	private char lastTurn;
+
+
+	/**
+	* @param p, to be able to find the correct location on the Board
+	* @return the 1d form of the given tile
+	*/
+	public int xyTo1d(Point p) {
+<span class="fc" id="L36">		int size = board.getSize();</span>
+<span class="fc" id="L37">		return (size * p.getX()) + p.getY() + 1;</span>
+	}
+
+	public void initBoard() {
+<span class="nc" id="L41">		board.initBoard();</span>
+<span class="nc" id="L42">	}</span>
+	/**
+     * Welcomes the user to the game!
+     * @return welcome, which is the welcome message.
+     */
+	public static String welcome() {
+<span class="fc" id="L48">		String welcome = &quot;Welcome to TicTacToe!&quot;;</span>
+<span class="fc" id="L49">		return welcome;</span>
+	}
+
+	/**
+	 * @param x coordiantes of Point p
+	 * @param y coordinates of Point p
+	 * @param move, to update the board
+	 * @return true/false depending on the status on the Board
+	 */
+	public boolean updateBoard(int x, int y, char move) {
+<span class="nc bnc" id="L59" title="All 2 branches missed.">		if (board.isAvailable(x, y)){</span>
+<span class="nc" id="L60">			board.updateBoard(x, y, move);</span>
+<span class="nc" id="L61">			return true;</span>
+		}
+<span class="nc" id="L63">		return false;</span>
+	}
+
+	/**
+     * Constructor for the TicTacToe class
+     */
+<span class="fc" id="L69">	public TicTacToe(){</span>
+<span class="fc" id="L70">		numberOfGames = 0;</span>
+<span class="fc" id="L71">		human = new HumanPlayer();</span>
+<span class="fc" id="L72">		computer = new ComputerPlayer();</span>
+<span class="fc" id="L73">		board = new Board();</span>
+
+<span class="fc" id="L75">	}</span>
+
+	/**
+     * @return numberOfGames, that keeps track of games played.
+     */
+	public int getNumberOfGames(){
+<span class="fc" id="L81">		return numberOfGames;</span>
+	}
+	/**
+	 * Increases the number of games played.
+	 */
+	public void addGame() {
+<span class="fc" id="L87">		numberOfGames++;</span>
+<span class="fc" id="L88">	}</span>
+
+	/**
+     * @return true/false if the game is over, false otherwise.
+     */
+	public boolean gameIsOver() {
+<span class="nc bnc" id="L94" title="All 4 branches missed.">		if(board.hasWinner() || board.isDraw()) {</span>
+<span class="nc" id="L95">			board.getWinner();</span>
+<span class="nc" id="L96">			return true;</span>
+		}
+		else
+<span class="nc" id="L99">			return false;</span>
+	}
+	/**
+     * Prints out the scoreboard, i.e. human player wins, computer player wins and ties.
+     */
+	public String printScoreboard() {
+<span class="nc" id="L105">		int ties = getNumberOfGames() - human.getWins() - computer.getWins();</span>
+<span class="nc" id="L106">		return &quot;The score is: --- You: &quot; + human.getWins() + &quot; --- Computer: &quot; + computer.getWins() + &quot; --- Ties: &quot; + ties;</span>
+	}
+
+	/**
+     * Asks each player to make one move, and makes sure the move is legal.
+     */
+	public void oneTurn() {
+<span class="nc" id="L113">		lastTurn = 'X';</span>
+		Point pointHuman;
+		Point pointComputer;
+<span class="nc" id="L116">		board.displayBoard();</span>
+		do {
+<span class="nc" id="L118">			pointHuman = human.getMove();</span>
+<span class="nc bnc" id="L119" title="All 2 branches missed.">		}while(!board.isAvailable(pointHuman));</span>
+<span class="nc" id="L120">		board.updateBoard(pointHuman, human.getSign());</span>
+
+<span class="nc bnc" id="L122" title="All 2 branches missed.">		if(!gameIsOver()) {</span>
+<span class="nc" id="L123">			board.displayBoard();</span>
+<span class="nc" id="L124">			System.out.println(&quot;Computer is creating a masterplan to beat you...&quot;);</span>
+			do {
+<span class="nc" id="L126">				lastTurn = 'O';</span>
+<span class="nc" id="L127">				pointComputer = computer.getMove();</span>
+<span class="nc bnc" id="L128" title="All 2 branches missed.">			}while(!board.isAvailable(pointComputer));</span>
+<span class="nc" id="L129">			board.updateBoard(pointComputer, computer.getSign());</span>
+		}
+<span class="nc" id="L131">	}</span>
+	/**
+     * Plays a move to the computer player
+     * @return The point where the computer wants to place their X or O
+ 	 */
+	public Point computerMove() {
+		Point pointComputer;
+		do {
+<span class="nc" id="L139">			pointComputer = computer.getMove();</span>
+<span class="nc bnc" id="L140" title="All 2 branches missed.">		}while(!board.isAvailable(pointComputer));</span>
+<span class="nc" id="L141">		board.updateBoard(pointComputer, computer.getSign());</span>
+<span class="nc" id="L142">		return pointComputer;</span>
+	}
+
+	/**
+     * @return true/false to see if the game has a winner or not
+	 */
+	public boolean hasWinner() {
+<span class="nc" id="L149">		return board.hasWinner();</span>
+	}
+	/**
+     * @return The winner of the game
+	 */
+	public char getWinner() {
+<span class="nc" id="L155">		return board.getWinner();</span>
+	}
+	/**
+     * Playes one whole round of tictactoe. One round is classified as one game of TicTacToe.
+     */
+	private void oneRound() {
+		do {
+<span class="nc" id="L162">			oneTurn();</span>
+<span class="nc bnc" id="L163" title="All 2 branches missed.">		}while(!gameIsOver());</span>
+<span class="nc" id="L164">		board.displayBoard();</span>
+<span class="nc bnc" id="L165" title="All 2 branches missed.">		if(board.hasWinner()) {</span>
+<span class="nc bnc" id="L166" title="All 2 branches missed.">			if(lastTurn == 'X') {</span>
+<span class="nc" id="L167">				human.addWin();</span>
+<span class="nc" id="L168">				System.out.println(&quot;Congratulations you won!!&quot;);</span>
+			}
+			else {
+<span class="nc" id="L171">				computer.addWin();</span>
+<span class="nc" id="L172">				System.out.println(&quot;Sorry you lost, try again!&quot;);</span>
+			}
+		}
+		else {
+<span class="nc" id="L176">			System.out.println(&quot;It's a tie!&quot;);</span>
+		}
+<span class="nc" id="L178">		addGame();</span>
+<span class="nc" id="L179">		printScoreboard();</span>
+<span class="nc" id="L180">	}</span>
+	/**
+     * @return board which is the game board
+     */
+	public Board getBoard() {
+<span class="nc" id="L185">		return board;</span>
+	}
+	/**
+     * Playes a game of tictactoe.
+     */
+	public void playGame() {
+<span class="nc" id="L191">		Scanner sc = new Scanner(System.in);</span>
+<span class="nc" id="L192">		int answer = 1;</span>
+		do {
+<span class="nc" id="L194">			oneRound();</span>
+<span class="nc" id="L195">			System.out.println(&quot;Do you want to play another TicTacToe? (1 = yes) (2 = no)&quot;);</span>
+<span class="nc" id="L196">			answer = sc.nextInt();</span>
+<span class="nc" id="L197">			sc.nextLine();</span>
+<span class="nc" id="L198">			board.initBoard();</span>
+
+<span class="nc bnc" id="L200" title="All 2 branches missed.">		} while(answer == 1);</span>
+<span class="nc" id="L201">	}</span>
+	/**
+     * main function to play the game
+     * @param args ,the arguments to put into play
+     */
+	public static void main(String[] args){
+<span class="nc" id="L207">		TicTacToe tictactoe = new TicTacToe();</span>
+<span class="nc" id="L208">		tictactoe.playGame();</span>
+<span class="nc" id="L209">		return;</span>
+	}
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

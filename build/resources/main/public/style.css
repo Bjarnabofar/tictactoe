@@ -1,0 +1,161 @@
+﻿
+	body { 
+		text-align: center; 
+		color: #000; 
+		padding: 0; 
+		margin: 0; 
+		background-color: #000;
+	}
+
+	h1, h2, h3, h4, h5, p, span, div, a, td, li {
+		font-family: Helvetica;
+	}
+	
+	table { 
+		border-collapse: collapse;
+		position: relative; 
+	}
+	
+	td { 
+		width: 170px; 
+		height: 170px; 
+		border: 0px solid #ffffff;
+		border-right-width: 6px;
+		border-bottom-width: 6px;
+		text-align: center;
+		font-size: 80px;
+		cursor: pointer;
+		position: relative;
+	}
+
+
+	td.O {
+		font-family: Arial;
+		color: #ffffff;
+	}
+	td.X {
+		font-family: Arial;
+		color: #ffffff;
+	}
+
+	td:nth-child(3) { border-right-width:0px; }
+	tr:last-child td { border-bottom-width:0px; }
+
+	td.X:hover, td.O:hover { background:transparent !important }
+
+	td.hover-0:after, td.hover-1:after {
+		content: "X";
+		display: block;
+		pointer-events: none;
+		position: relative;
+		text-align: center;
+		vertical-align: center;
+		font-size: 80px;
+		color: #546363;
+		font-family: sans-serif;
+		opacity: 0.4;
+	}
+	
+	td.hover-1:after {
+		content: "O";
+		font-family: sans-serif;
+	}
+
+	td.X.hover-0:after, td.X.hover-1:after,
+	td.O.hover-0:after, td.O.hover-1:after {
+		display: none !important;
+	}
+
+	h1 {
+		display: none;
+		text-align: center;
+		font-size: 43px;
+		font-weight: 200;
+		color: #fff;
+		text-shadow: 0 1px 1px #555
+	}
+
+
+	#menu-con {
+		background: #000000;
+		padding: 10px;
+		padding-bottom: 13px;
+	}
+
+	#menu {
+		width: 530px;
+		margin: 0 auto; 
+	}
+
+	#menu li {
+		display: inline-block;
+		width: 170px;
+		text-align: center;
+		color: #fff;
+	}
+	
+	#menu li:first-child { 
+		text-align:left;
+	}
+
+	#menu li:last-child  { 
+		text-align:right;
+	}
+
+	#restart {
+		display: inline-block;
+	}
+
+	.button {
+		padding: 5px;
+		color: #fff;
+		border: 1px solid rgba(255,255,255,0.7);
+		border-radius: 4px;
+		opacity: 0.7;
+		text-decoration: none;
+	}
+
+	#status {
+		color: #111;
+		font-size: 21px;
+		opacity: 0;
+	}
+	#status.show { opacity:1 }
+
+	#theme {
+		font-size: 13px;
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+		color: #333;
+		border-color: #fff;
+		background-color: rgba(255,255,255,0.35);
+		opacity: 1;
+	}
+
+	#game {
+		margin: 80px auto; 
+		background: rgba(255,255,255, 0.5);
+		background: transparent;
+	}
+
+	#foot {
+		position: center;
+		color: #ffffff;
+		font-size: 16px;
+		opacity: 0.7;
+	}
+
+	#foot a {
+		color: #a83f5c;
+		text-decoration: none;
+	}
+
+	#results {
+		color: #ffffff;
+	}
+
+	#game {
+		color: #ffffff;
+		font-size: 32px;
+	}

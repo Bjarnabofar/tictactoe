@@ -1,6 +1,6 @@
 ﻿---
-layout: des
-title: "Design report for tictactoe"
+layout: default
+title: "Design Report for tictactoe"
 ---
 ##Design Report for tictactoe
 Bjarnabofarnir<br />

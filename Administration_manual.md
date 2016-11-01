@@ -1,5 +1,5 @@
-﻿---
-layout: admin
+---
+layout: default
 title: "Administration manual for tictactoe"
 ---
 ##Administration manual for tictactoe##
@@ -28,3 +28,9 @@ When the app is ready for production, after all selenium tests have passed, a pu
 request must be made to merge master branch to production branch. 
 When the pull request is accepted, the app goes live. The website for the production app
 is tictactoe-production.herokuapp.com. 
+
+Before making a pull request or accepting a pull request one must log in to git (see 
+develop manual)
+
+
+
