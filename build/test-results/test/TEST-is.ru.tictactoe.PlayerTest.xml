@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.ru.tictactoe.PlayerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-11-01T02:01:43" hostname="testing-worker-linux-docker-07dff4ff-3464-linux-11" time="0.001">
+<testsuite name="is.ru.tictactoe.PlayerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-11-01T02:13:16" hostname="testing-worker-linux-docker-8891ba70-3411-linux-8" time="0.005">
   <properties/>
-  <testcase name="testGetDraws" classname="is.ru.tictactoe.PlayerTest" time="0.0"/>
+  <testcase name="testGetDraws" classname="is.ru.tictactoe.PlayerTest" time="0.001"/>
   <testcase name="testAddDraw" classname="is.ru.tictactoe.PlayerTest" time="0.0"/>
-  <testcase name="testAddWins" classname="is.ru.tictactoe.PlayerTest" time="0.0"/>
+  <testcase name="testAddWins" classname="is.ru.tictactoe.PlayerTest" time="0.001"/>
   <testcase name="testGetSing" classname="is.ru.tictactoe.PlayerTest" time="0.0"/>
-  <testcase name="testGetWins" classname="is.ru.tictactoe.PlayerTest" time="0.0"/>
-  <testcase name="testAddLosses" classname="is.ru.tictactoe.PlayerTest" time="0.0"/>
+  <testcase name="testGetWins" classname="is.ru.tictactoe.PlayerTest" time="0.001"/>
+  <testcase name="testAddLosses" classname="is.ru.tictactoe.PlayerTest" time="0.001"/>
   <testcase name="testGetLosses" classname="is.ru.tictactoe.PlayerTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
