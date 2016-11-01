@@ -30,6 +30,7 @@ TARGET_BRANCH="gh-pages"
 	      cp -R docs/Design_report.md out/
 	      # Now let's go have some fun with the cloned repo
 	      cd out
+	      pandoc Design_report.md -f markdown -t html -s -o test1.html
 	      git config user.name "Travis CI"
 	      git config user.email "$COMMIT_AUTHOR_EMAIL"
 

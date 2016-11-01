@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: dev
 title: "Development manual for tictactoe"
 ---
 # Development manual for tictactoe

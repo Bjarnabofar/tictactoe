@@ -1,5 +1,5 @@
----
-layout: default
+﻿---
+layout: admin
 title: "Administration manual for tictactoe"
 ---
 ##Administration manual for tictactoe##
