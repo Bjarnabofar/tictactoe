@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.ru.tictactoe.PointTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-11-02T20:45:23" hostname="testing-worker-linux-docker-be4c6b27-3465-linux-7" time="0.019">
+<testsuite name="is.ru.tictactoe.PointTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-11-02T21:08:54" hostname="testing-worker-linux-docker-fa734702-3499-linux-16" time="0.018">
   <properties/>
   <testcase name="testX" classname="is.ru.tictactoe.PointTest" time="0.001"/>
   <testcase name="testY" classname="is.ru.tictactoe.PointTest" time="0.001"/>
-  <testcase name="testPointConstructor" classname="is.ru.tictactoe.PointTest" time="0.001"/>
+  <testcase name="testPointConstructor" classname="is.ru.tictactoe.PointTest" time="0.01"/>
   <testcase name="testPointSet" classname="is.ru.tictactoe.PointTest" time="0.001"/>
-  <testcase name="testDefaultPointConstructor" classname="is.ru.tictactoe.PointTest" time="0.01"/>
+  <testcase name="testDefaultPointConstructor" classname="is.ru.tictactoe.PointTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

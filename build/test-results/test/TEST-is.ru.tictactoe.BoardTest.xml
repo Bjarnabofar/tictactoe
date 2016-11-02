@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.ru.tictactoe.BoardTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2016-11-02T20:45:23" hostname="testing-worker-linux-docker-be4c6b27-3465-linux-7" time="0.083">
+<testsuite name="is.ru.tictactoe.BoardTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2016-11-02T21:08:54" hostname="testing-worker-linux-docker-fa734702-3499-linux-16" time="0.028">
   <properties/>
-  <testcase name="testSize" classname="is.ru.tictactoe.BoardTest" time="0.005"/>
-  <testcase name="testIfXIsWinnerDiagonallyTopRightToLeftBottom" classname="is.ru.tictactoe.BoardTest" time="0.005"/>
+  <testcase name="testSize" classname="is.ru.tictactoe.BoardTest" time="0.01"/>
+  <testcase name="testIfXIsWinnerDiagonallyTopRightToLeftBottom" classname="is.ru.tictactoe.BoardTest" time="0.002"/>
   <testcase name="testWhenCellIsUpdatedByO" classname="is.ru.tictactoe.BoardTest" time="0.0"/>
-  <testcase name="testWhenCellIsUpdatedByX" classname="is.ru.tictactoe.BoardTest" time="0.0"/>
-  <testcase name="testHasWinner" classname="is.ru.tictactoe.BoardTest" time="0.001"/>
-  <testcase name="testIfOIsWinnerInCol2" classname="is.ru.tictactoe.BoardTest" time="0.015"/>
-  <testcase name="testIfOIsWinnerInCol3" classname="is.ru.tictactoe.BoardTest" time="0.001"/>
+  <testcase name="testWhenCellIsUpdatedByX" classname="is.ru.tictactoe.BoardTest" time="0.001"/>
+  <testcase name="testHasWinner" classname="is.ru.tictactoe.BoardTest" time="0.0"/>
+  <testcase name="testIfOIsWinnerInCol2" classname="is.ru.tictactoe.BoardTest" time="0.0"/>
+  <testcase name="testIfOIsWinnerInCol3" classname="is.ru.tictactoe.BoardTest" time="0.0"/>
   <testcase name="testIfOIsWinnerInRow2" classname="is.ru.tictactoe.BoardTest" time="0.0"/>
-  <testcase name="testWhenCellInBoardIsAvailable" classname="is.ru.tictactoe.BoardTest" time="0.001"/>
-  <testcase name="testIfItIsDraw" classname="is.ru.tictactoe.BoardTest" time="0.001"/>
-  <testcase name="testIfXIsWinnerInCol1" classname="is.ru.tictactoe.BoardTest" time="0.001"/>
-  <testcase name="testIfXIsWinnerInRow1" classname="is.ru.tictactoe.BoardTest" time="0.001"/>
-  <testcase name="testIfXIsWinnerInRow3" classname="is.ru.tictactoe.BoardTest" time="0.003"/>
-  <testcase name="testIfOIsWinnerDiagonallyTopLeftToRightBottom" classname="is.ru.tictactoe.BoardTest" time="0.005"/>
-  <testcase name="testWhenThereIsNoDraw" classname="is.ru.tictactoe.BoardTest" time="0.001"/>
+  <testcase name="testWhenCellInBoardIsAvailable" classname="is.ru.tictactoe.BoardTest" time="0.0"/>
+  <testcase name="testIfItIsDraw" classname="is.ru.tictactoe.BoardTest" time="0.0"/>
+  <testcase name="testIfXIsWinnerInCol1" classname="is.ru.tictactoe.BoardTest" time="0.0"/>
+  <testcase name="testIfXIsWinnerInRow1" classname="is.ru.tictactoe.BoardTest" time="0.0"/>
+  <testcase name="testIfXIsWinnerInRow3" classname="is.ru.tictactoe.BoardTest" time="0.0"/>
+  <testcase name="testIfOIsWinnerDiagonallyTopLeftToRightBottom" classname="is.ru.tictactoe.BoardTest" time="0.0"/>
+  <testcase name="testWhenThereIsNoDraw" classname="is.ru.tictactoe.BoardTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
