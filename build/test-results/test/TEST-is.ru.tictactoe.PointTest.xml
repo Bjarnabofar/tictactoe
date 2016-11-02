@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.ru.tictactoe.PointTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-11-02T21:50:47" hostname="testing-worker-linux-docker-5d6256a5-3448-linux-7" time="0.009">
+<testsuite name="is.ru.tictactoe.PointTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-11-02T22:12:52" hostname="testing-worker-linux-docker-8f0a2c16-3426-linux-10" time="0.007">
   <properties/>
-  <testcase name="testX" classname="is.ru.tictactoe.PointTest" time="0.004"/>
-  <testcase name="testY" classname="is.ru.tictactoe.PointTest" time="0.0"/>
-  <testcase name="testPointConstructor" classname="is.ru.tictactoe.PointTest" time="0.001"/>
-  <testcase name="testPointSet" classname="is.ru.tictactoe.PointTest" time="0.0"/>
-  <testcase name="testDefaultPointConstructor" classname="is.ru.tictactoe.PointTest" time="0.0"/>
+  <testcase name="testX" classname="is.ru.tictactoe.PointTest" time="0.0"/>
+  <testcase name="testY" classname="is.ru.tictactoe.PointTest" time="0.001"/>
+  <testcase name="testPointConstructor" classname="is.ru.tictactoe.PointTest" time="0.0"/>
+  <testcase name="testPointSet" classname="is.ru.tictactoe.PointTest" time="0.001"/>
+  <testcase name="testDefaultPointConstructor" classname="is.ru.tictactoe.PointTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.ru.tictactoe.ComputerPlayerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-11-02T21:50:47" hostname="testing-worker-linux-docker-5d6256a5-3448-linux-7" time="0.0">
+<testsuite name="is.ru.tictactoe.ComputerPlayerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-11-02T22:12:52" hostname="testing-worker-linux-docker-8f0a2c16-3426-linux-10" time="0.012">
   <properties/>
-  <testcase name="testGetSing" classname="is.ru.tictactoe.ComputerPlayerTest" time="0.0"/>
+  <testcase name="testGetSing" classname="is.ru.tictactoe.ComputerPlayerTest" time="0.012"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
