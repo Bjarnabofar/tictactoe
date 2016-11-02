@@ -2,7 +2,8 @@
 layout: admin
 title: "Administration manual for tictactoe"
 ---
-##Administration manual for tictactoe##
+##Administration manual for tictactoe######
+</br>
 *Bjarnabofarnir</br>
 *Emil Hjaltason</br>
 *Hanna Ragnarsdóttir</br>
