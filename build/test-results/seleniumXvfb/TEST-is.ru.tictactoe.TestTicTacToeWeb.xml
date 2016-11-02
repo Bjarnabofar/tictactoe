@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.ru.tictactoe.TestTicTacToeWeb" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-11-02T21:10:06" hostname="testing-worker-linux-docker-fa734702-3499-linux-16" time="12.969">
+<testsuite name="is.ru.tictactoe.TestTicTacToeWeb" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-11-02T21:16:31" hostname="testing-worker-linux-docker-dcb49545-3436-linux-6" time="13.264">
   <properties/>
-  <testcase name="intitialMessageMatches" classname="is.ru.tictactoe.TestTicTacToeWeb" time="0.291"/>
-  <testcase name="testRestart" classname="is.ru.tictactoe.TestTicTacToeWeb" time="9.351"/>
-  <testcase name="testInputX" classname="is.ru.tictactoe.TestTicTacToeWeb" time="3.325"/>
+  <testcase name="intitialMessageMatches" classname="is.ru.tictactoe.TestTicTacToeWeb" time="0.435"/>
+  <testcase name="testRestart" classname="is.ru.tictactoe.TestTicTacToeWeb" time="9.433"/>
+  <testcase name="testInputX" classname="is.ru.tictactoe.TestTicTacToeWeb" time="3.395"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

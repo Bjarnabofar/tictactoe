@@ -5,7 +5,7 @@ import is.ru.tictactoe.Cell;
 import is.ru.tictactoe.Point;
 
 /**
- * Board class contains functions regarding the board in tictactoe.
+ * Board class contains the awesome functions regarding the board in tictactoe.
  * The class updates cells, check if cell is available and checks if there is 
  * a winner or tie
  * @author Bjarnabofarnir
