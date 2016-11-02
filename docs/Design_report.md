@@ -1,5 +1,5 @@
 ﻿---
-layout: default
+layout: des
 title: "Design Report for tictactoe"
 ---
 ##Design Report for tictactoe

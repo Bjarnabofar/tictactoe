@@ -20,12 +20,8 @@ before_script:
 before_install:
 - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
 
-after_failure:
-- bash ./deploy.sh
-
 after_success:
 - ./gradlew jacocoTestReport coveralls
-- bash ./deploy.sh
 
 deploy:
   provider: heroku
@@ -37,6 +33,7 @@ deploy:
 
 after_deploy:
 - ./gradlew seleniumXvfb
+- bash ./deploy.sh
 
 
 
