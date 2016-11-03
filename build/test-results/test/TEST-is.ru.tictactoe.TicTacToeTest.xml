@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.ru.tictactoe.TicTacToeTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-11-02T22:12:52" hostname="testing-worker-linux-docker-8f0a2c16-3426-linux-10" time="0.022">
+<testsuite name="is.ru.tictactoe.TicTacToeTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-11-03T08:39:55" hostname="testing-worker-linux-docker-2e487cd6-3407-linux-3" time="0.006">
   <properties/>
-  <testcase name="testxyTo1d" classname="is.ru.tictactoe.TicTacToeTest" time="0.019"/>
+  <testcase name="testxyTo1d" classname="is.ru.tictactoe.TicTacToeTest" time="0.002"/>
   <testcase name="testGetNumberOfGamesMany" classname="is.ru.tictactoe.TicTacToeTest" time="0.001"/>
-  <testcase name="testGetNumberOfGamesZero" classname="is.ru.tictactoe.TicTacToeTest" time="0.001"/>
-  <testcase name="testWelcome" classname="is.ru.tictactoe.TicTacToeTest" time="0.0"/>
+  <testcase name="testGetNumberOfGamesZero" classname="is.ru.tictactoe.TicTacToeTest" time="0.0"/>
+  <testcase name="testWelcome" classname="is.ru.tictactoe.TicTacToeTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
